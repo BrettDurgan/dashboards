@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phat Panda Group &mdash; Weekly Retail Dashboards</title>
+<style>
+:root {
+--bg: #000000; --surface: #111111; --card: #1A1A1A;
+--border: #2B2B2B; --border-strong: #3A3A3A;
+--ember: #E63946; --ember-hi: #FF6B5C;
+--neon: #C5E847; --neon-hi: #DCFA75;
+--white: #FFFFFF; --cream: #F5F5F0; --muted: #8A8A85;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--white); font-family: 'Helvetica Neue','Arial',sans-serif; min-height: 100vh; }
+.header { background: #000; padding: 28px 24px 22px; border-bottom: 2px solid var(--neon); }
+.wordmark .word { font-weight: 900; font-size: 30pt; letter-spacing: 5px; color: var(--white); line-height: 0.9; }
+.wordmark .word .flame { color: var(--ember); }
+.wordmark .tagline { font-size: 8pt; font-weight: 800; color: var(--ember); letter-spacing: 3px; text-transform: uppercase; margin-top: 4px; }
+h1 { font-size: 18pt; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-top: 16px; }
+.subtitle { font-size: 9pt; color: var(--neon); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-top: 4px; }
+.container { max-width: 900px; margin: 0 auto; padding: 32px 24px 60px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin-top: 20px; }
+a.card { display: block; background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--neon); border-radius: 4px; padding: 16px 18px; text-decoration: none; color: var(--white); transition: border-color .15s, background .15s; }
+a.card:hover { border-color: var(--neon); background: #1F1F1F; }
+a.card.rollup { border-left-color: var(--ember); }
+.card-title { font-size: 11pt; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
+.card-sub { font-size: 8pt; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+.footer { text-align: center; padding: 20px 4px; color: var(--muted); font-size: 7.5pt; border-top: 2px solid var(--neon); margin-top: 40px; letter-spacing: .5px; }
+.footer .brand-line { color: var(--neon); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 3px; }
+</style></head><body>
+
+<div class="header">
+ <div class="wordmark"><div class="word">EM B<span class="flame">R</span></div><div class="tagline">Quality Cannabis Reserve</div></div>
+ <h1>Weekly Retail Dashboards</h1>
+ <div class="subtitle">Phat Panda Group &middot; 6 Retail Locations &middot; Updated Every Monday</div>
+</div>
+
+<div class="container">
+ <div class="grid">
+  <a class="card rollup" href="WEEKLY_DASHBOARD_ALL_STORES.html">
+   <div class="card-title">All Stores &mdash; Network Rollup</div>
+   <div class="card-sub">All 6 stores consolidated &middot; cross-store KPIs, sales &amp; labor</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_EMBR_SPRINGFIELD.html">
+   <div class="card-title">EMBR Springfield</div>
+   <div class="card-sub">Springfield, MA &middot; License MR284652</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_EMBR_NORTHAMPTON.html">
+   <div class="card-title">EMBR Northampton</div>
+   <div class="card-sub">Northampton, MA &middot; License MR284653</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_FYRE_ANTS_EASTHAMPTON.html">
+   <div class="card-title">Fyre Ants Easthampton</div>
+   <div class="card-sub">Easthampton, MA &middot; License MR284654</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_EMBR_LA_MESA.html">
+   <div class="card-title">EMBR La Mesa</div>
+   <div class="card-sub">La Mesa, CA &middot; License C10-0001234</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_EMBR_LAKE_ELSINORE.html">
+   <div class="card-title">EMBR Lake Elsinore</div>
+   <div class="card-sub">Lake Elsinore, CA &middot; License C10-0001234-LIC</div>
+  </a>
+  <a class="card" href="WEEKLY_DASHBOARD_HLC_GREENFIELD.html">
+   <div class="card-title">HLC Greenfield</div>
+   <div class="card-sub">Greenfield, CA &middot; License C10-0000890-LIC</div>
+  </a>
+ </div>
+</div>
+
+<div class="footer">
+ <div class="brand-line">Phat Panda Group &middot; Weekly Retail Analytics</div>
+ <div>Personal deployment &middot; Internal use only</div>
+</div>
+
+</body></html>
