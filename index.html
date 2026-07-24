@@ -1,134 +1,154 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Phat Panda Group &mdash; Weekly Retail Dashboards</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Phat Panda Group — Weekly Retail Dashboards</title>
 <style>
-:root {
-  --bg: #0F0E0C;
-  --text: #F5F0E8;
-  --muted: #8B847C;
-  --rule: #2A2823;
-  --card-bg: #17150F;
-}
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-font-smoothing: antialiased; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 56px 28px 80px; }
-header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 40px; }
-.eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-h1 { font-size: 34px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -0.01em; }
-h1 .week-range { font-weight: 400; color: var(--muted); font-size: 20px; margin-left: 4px; }
-.sub { color: var(--muted); font-size: 15px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
-a.card { display: block; padding: 22px 22px 20px; border-radius: 12px; text-decoration: none;
-  color: inherit; border: 1px solid var(--rule); background: var(--card-bg);
-  position: relative; transition: border-color .15s, background .15s, transform .15s; }
-a.card:hover { border-color: var(--muted); background: #1C1A14; transform: translateY(-1px); }
-.swatch { position: absolute; top: 0; left: 0; width: 4px; height: 100%; border-radius: 12px 0 0 12px; }
-.card.allstores .swatch { background: #C5E847; }
-.card.embr .swatch { background: #E63946; }
-.card.fyre .swatch { background: #FF9F1C; }
-.card.hlc .swatch { background: #4EA1D3; }
-.brand { font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--text); }
-.store { font-size: 19px; font-weight: 600; margin: 6px 0 4px; }
-.meta { font-size: 13px; color: var(--muted); line-height: 1.4; }
-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); }
-.footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); }
-</style></head><body>
+  :root {
+    --bg: #0F0E0C;
+    --text: #F5F0E8;
+    --muted: #8B847C;
+    --rule: #2A2823;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 56px 28px 80px; }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 34px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  a.card { display: block; padding: 22px 22px 20px; border-radius: 12px; text-decoration: none;
+    color: inherit; border: 1px solid var(--rule); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.0));
+    transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease; position: relative; overflow: hidden; }
+  a.card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
+  .swatch { width: 36px; height: 36px; border-radius: 8px; margin-bottom: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+  .brand { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .store { font-size: 20px; font-weight: 700; margin: 4px 0 4px; letter-spacing: -0.01em; }
+  .meta { font-size: 13px; color: var(--muted); }
+  .roll { grid-column: 1 / -1; padding: 26px 26px 24px;
+    background: linear-gradient(135deg, rgba(232,93,42,0.10), rgba(212,165,116,0.08));
+    border: 1px solid #3a2a20; }
+  .roll .store { font-size: 24px; }
+  footer { color: var(--muted); font-size: 12px; margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 20px; }
+  .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .cycle-tag { display: inline-block; padding: 4px 10px; border-radius: 999px; background: rgba(232,93,42,0.12);
+    color: #FF8C42; font-size: 12px; font-weight: 600; margin-left: 6px; }
 
-<div class="wrap">
-  <header>
-    <div class="eyebrow">Phat Panda Group &mdash; Weekly Retail Reporting</div>
-    <h1>Weekly Retail Dashboards <span class="week-range" id="week-range"></span></h1>
-    <div class="sub">Updated every Monday morning &middot; 6 stores &middot; executive review</div>
-  </header>
+  .embr   { --accent: #E85D2A; --accent2: #FF8C42; }
+  .fyre   { --accent: #F66009; --accent2: #971C1C; }
+  .hlc    { --accent: #B5AC7D; --accent2: #988F57; }
+  .rollup { --accent: #E85D2A; --accent2: #D4A574; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Phat Panda Group — Weekly Retail Reporting</div>
+      <h1>Weekly Retail Dashboards <span id="cycle-tag" class="cycle-tag" style="display:none"></span></h1>
+      <div class="sub">Updated every Monday morning · 6 stores · executive review</div>
+    </header>
 
-  <div class="grid">
-    <a class="card allstores" href="./WEEKLY_DASHBOARD_ALL_STORES.html">
-      <div class="swatch"></div>
-      <div class="brand">All Stores</div>
-      <div class="store">Group Roll-Up &mdash; All 6 Stores</div>
-      <div class="meta">Consolidated KPIs, cross-store comparisons, group payroll &amp; sales</div>
-    </a>
+    <div class="grid">
+      <a class="card roll rollup" href="./WEEKLY_DASHBOARD_ALL_STORES.html">
+        <div class="swatch"></div>
+        <div class="brand">All Stores</div>
+        <div class="store">Group Roll-Up — All 6 Stores</div>
+        <div class="meta">Consolidated KPIs, cross-store comparisons, group payroll &amp; sales</div>
+      </a>
 
-    <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_SPRINGFIELD.html">
-      <div class="swatch"></div>
-      <div class="brand">EMBR</div>
-      <div class="store">Springfield, MA</div>
-      <div class="meta">461 Boston Rd &middot; License MR284652</div>
-    </a>
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_NORTHAMPTON.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">Northampton, MA</div>
+        <div class="meta">144 King St · License MR283720</div>
+      </a>
 
-    <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_NORTHAMPTON.html">
-      <div class="swatch"></div>
-      <div class="brand">EMBR</div>
-      <div class="store">Northampton, MA</div>
-      <div class="meta">163 Locust St &middot; License MR284653</div>
-    </a>
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_SPRINGFIELD.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">Springfield, MA</div>
+        <div class="meta">Dutchie POS</div>
+      </a>
 
-    <a class="card fyre" href="./WEEKLY_DASHBOARD_FYRE_ANTS_EASTHAMPTON.html">
-      <div class="swatch"></div>
-      <div class="brand">Fyre Ants</div>
-      <div class="store">Easthampton, MA</div>
-      <div class="meta">102 Northampton St &middot; License MR284654</div>
-    </a>
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LA_MESA.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">La Mesa, CA</div>
+        <div class="meta">Dutchie POS</div>
+      </a>
 
-    <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LA_MESA.html">
-      <div class="swatch"></div>
-      <div class="brand">EMBR</div>
-      <div class="store">La Mesa, CA</div>
-      <div class="meta">7840 El Cajon Blvd &middot; License C10-0001234</div>
-    </a>
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LAKE_ELSINORE.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">Lake Elsinore, CA</div>
+        <div class="meta">Dutchie POS</div>
+      </a>
 
-    <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LAKE_ELSINORE.html">
-      <div class="swatch"></div>
-      <div class="brand">EMBR</div>
-      <div class="store">Lake Elsinore, CA</div>
-      <div class="meta">31881 Corydon Rd STE 150 &middot; License C10-0001234-LIC</div>
-    </a>
+      <a class="card fyre" href="./WEEKLY_DASHBOARD_FYRE_ANTS_EASTHAMPTON.html">
+        <div class="swatch"></div>
+        <div class="brand">Fyre Ants</div>
+        <div class="store">Easthampton, MA</div>
+        <div class="meta">MA's top-rated recreational dispensary</div>
+      </a>
 
-    <a class="card hlc" href="./WEEKLY_DASHBOARD_HLC_GREENFIELD.html">
-      <div class="swatch"></div>
-      <div class="brand">HLC Greenfield</div>
-      <div class="store">Greenfield, CA</div>
-      <div class="meta">48 4th St &middot; License C10-0000890-LIC</div>
-    </a>
+      <a class="card hlc" href="./WEEKLY_DASHBOARD_HLC_GREENFIELD.html">
+        <div class="swatch"></div>
+        <div class="brand">Higher Level of Care</div>
+        <div class="store">Greenfield, CA</div>
+        <div class="meta">Treez archive pre-cutover · Dutchie post-cutover</div>
+      </a>
+    </div>
+
+    <footer>
+      <div class="footer-row">
+        <div>Format: v2.3 · Methodology: ANALYTICS_METHODOLOGY_v2</div>
+        <div>Phat Panda Group · Internal use only</div>
+      </div>
+    </footer>
   </div>
 
-  <footer>
-    <div class="footer-row">
-      <div>Format: v2.3 &middot; Methodology: ANALYTICS_METHODOLOGY_v2.3</div>
-      <div>Phat Panda Group &middot; Internal use only</div>
-    </div>
-  </footer>
-</div>
+  <script>
+    // Compute the current reporting cycle (Mon–Sun, ISO week number) directly from
+    // today's date, so the header always shows "Mon YYYY-MM-DD -> Sun YYYY-MM-DD (Wnn)"
+    // without needing to fetch or parse the roll-up dashboard, and without any manual
+    // edits to this file week to week.
+    (function () {
+      const DAY_ABBR = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-<script>
-(function () {
-  function pad(n) { return n < 10 ? '0' + n : '' + n; }
-  function fmt(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
-  function isoWeekNumber(d) {
-    var target = new Date(d.valueOf());
-    var dayNr = (d.getDay() + 6) % 7; // Mon=0 ... Sun=6
-    target.setDate(target.getDate() - dayNr + 3);
-    var firstThursday = target.valueOf();
-    target.setMonth(0, 1);
-    if (target.getDay() !== 4) {
-      target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
-    }
-    return 1 + Math.round((firstThursday - target) / (7 * 24 * 3600 * 1000));
-  }
+      function fmtDate(d) {
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        return `${yyyy}-${mm}-${dd}`;
+      }
 
-  var today = new Date();
-  var dow = today.getDay(); // 0=Sun ... 6=Sat
-  var lastSunday = new Date(today);
-  lastSunday.setDate(today.getDate() - dow);
-  var monday = new Date(lastSunday);
-  monday.setDate(lastSunday.getDate() - 6);
+      function isoWeekNumber(d) {
+        const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+        const dayNum = date.getUTCDay() || 7;
+        date.setUTCDate(date.getUTCDate() + 4 - dayNum);
+        const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+        return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+      }
 
-  var label = 'Mon ' + fmt(monday) + ' → Sun ' + fmt(lastSunday) + ' (W' + isoWeekNumber(monday) + ')';
-  document.getElementById('week-range').textContent = label;
-})();
-</script>
+      const today = new Date();
+      const daysSinceSunday = today.getDay(); // 0 (Sun) .. 6 (Sat)
+      const lastSunday = new Date(today);
+      lastSunday.setDate(today.getDate() - daysSinceSunday);
+      const monday = new Date(lastSunday);
+      monday.setDate(lastSunday.getDate() - 6);
 
-</body></html>
+      const weekNo = isoWeekNumber(monday);
+      const label = `${DAY_ABBR[monday.getDay()]} ${fmtDate(monday)} → ${DAY_ABBR[lastSunday.getDay()]} ${fmtDate(lastSunday)} (W${weekNo})`;
+
+      const tag = document.getElementById('cycle-tag');
+      tag.textContent = label;
+      tag.style.display = 'inline-block';
+    })();
+  </script>
+</body>
+</html>
