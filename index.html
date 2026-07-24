@@ -20,7 +20,8 @@
   .eyebrow { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
   h1 { font-size: 34px; font-weight: 700; margin: 8px 0 6px; letter-spacing: -0.01em; }
   .sub { color: var(--muted); font-size: 15px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); } }
   a.card { display: block; padding: 22px 22px 20px; border-radius: 12px; text-decoration: none;
     color: inherit; border: 1px solid var(--rule); background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.0));
     transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease; position: relative; overflow: hidden; }
@@ -72,35 +73,35 @@
         <div class="swatch"></div>
         <div class="brand">EMBR</div>
         <div class="store">Springfield, MA</div>
-        <div class="meta">Dutchie POS</div>
-      </a>
-
-      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LA_MESA.html">
-        <div class="swatch"></div>
-        <div class="brand">EMBR</div>
-        <div class="store">La Mesa, CA</div>
-        <div class="meta">Dutchie POS</div>
-      </a>
-
-      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LAKE_ELSINORE.html">
-        <div class="swatch"></div>
-        <div class="brand">EMBR</div>
-        <div class="store">Lake Elsinore, CA</div>
-        <div class="meta">Dutchie POS</div>
+        <div class="meta">141 Boston Rd · License MR284652</div>
       </a>
 
       <a class="card fyre" href="./WEEKLY_DASHBOARD_FYRE_ANTS_EASTHAMPTON.html">
         <div class="swatch"></div>
         <div class="brand">Fyre Ants</div>
         <div class="store">Easthampton, MA</div>
-        <div class="meta">MA's top-rated recreational dispensary</div>
+        <div class="meta">102 Northampton St · License MR281246</div>
+      </a>
+
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LA_MESA.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">La Mesa, CA</div>
+        <div class="meta">8300 Center Dr · License C10-0000290-LIC</div>
+      </a>
+
+      <a class="card embr" href="./WEEKLY_DASHBOARD_EMBR_LAKE_ELSINORE.html">
+        <div class="swatch"></div>
+        <div class="brand">EMBR</div>
+        <div class="store">Lake Elsinore, CA</div>
+        <div class="meta">31881 Corydon Rd · License C12-0000415-LIC</div>
       </a>
 
       <a class="card hlc" href="./WEEKLY_DASHBOARD_HLC_GREENFIELD.html">
         <div class="swatch"></div>
         <div class="brand">Higher Level of Care</div>
         <div class="store">Greenfield, CA</div>
-        <div class="meta">Treez archive pre-cutover · Dutchie post-cutover</div>
+        <div class="meta">48 4th St · License C10-0000890-LIC</div>
       </a>
     </div>
 
