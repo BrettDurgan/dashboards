@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
-<title>EMBR Lake Elsinore &mdash; W30 Weekly Dashboard &mdash; 2026-07-26</title>
+<title>EMBR Lake Elsinore &mdash; W31 Weekly Dashboard &mdash; 2026-08-02</title>
 <style>
 @page { size: Letter landscape; margin: 0.4in; }
 :root {
@@ -83,11 +83,16 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 .checklist .ci { padding:2px 0; }
 .ci.pass::before { content: "[OK] "; color:var(--leaf); font-weight:800; }
 .ci.partial::before { content:"[PARTIAL] "; color:var(--warn); font-weight:800; }
-.ci.gap-item::before { content:"[GAP] "; color:var(--alert); font-weight:800; }
+.ci.gap-item::before { content: "[GAP] "; color:var(--alert); font-weight:800; }
 .footer { text-align:center; padding:8px 4px; color:var(--muted); font-size:6.5pt; border-top:2px solid var(--neon); margin-top:12px; letter-spacing:.5px; }
 .footer .brand-line { color:var(--neon); font-weight:800; letter-spacing:2px; text-transform:uppercase; margin-bottom:2px; }
 .muted { color:var(--muted); }
 .note { font-size:7pt; color:var(--muted); margin-top:5px; line-height:1.4; }
+.heat-tooltip { position: fixed; display: none; background: var(--card); border: 1px solid var(--neon); border-radius: 4px; padding: 9px 11px; font-family: 'Helvetica Neue','Arial',sans-serif; font-size: 7.5pt; line-height: 1.6; color: var(--white); pointer-events: none; z-index: 1000; box-shadow: 0 6px 18px rgba(0,0,0,.55); min-width: 180px; }
+.heat-tooltip .tt-title { font-weight: 800; color: var(--neon); text-transform: uppercase; letter-spacing: .5px; font-size: 7pt; margin-bottom: 5px; padding-bottom: 4px; border-bottom: 1px solid var(--border-strong); }
+.heat-tooltip .tt-row { display: flex; justify-content: space-between; gap: 16px; }
+.heat-tooltip .tt-label { color: var(--muted); }
+.heat-tooltip .tt-val { color: var(--white); font-weight: 700; }
 </style></head><body>
 <div class="header">
  <div class="header-row">
@@ -103,182 +108,233 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
  <div>License C10-0001234-LIC</div>
  <div>POS: Dutchie &middot; Payroll: UKG</div>
  <div><span class="loc-chip">&#9660; Lake Elsinore, CA</span></div>
- <div style="margin-top:5px;"><span class="badge badge-ok">POS Live</span><span class="badge badge-prod">v2.3 &middot; Production</span> <span class="tag dn">-1.4% WoW</span></div>
+ <div style="margin-top:5px;"><span class="badge badge-ok">POS Live</span><span class="badge badge-prod">v2.3 &middot; Production</span> <span class="tag dn">-0.4% WoW</span></div>
  </div>
  </div>
- <div class="meta" style="margin-top:8px;">Reporting week: <strong>Mon 2026-07-20 → Sun 2026-07-26 (W30)</strong> &middot; Dutchie GAP_BACKFILL · UKG Counter 07/20–07/26 · Generated: 2026-07-27 · Phat Panda Group Analytics · Methodology v2.3</div>
+ <div class="meta" style="margin-top:8px;">Reporting week: <strong>Mon 2026-07-27 &rarr; Sun 2026-08-02 (W31)</strong> &middot; Dutchie GAP_BACKFILL &middot; UKG Counter 07/27&ndash;08/02 &middot; Generated: 2026-08-03 &middot; Phat Panda Group Analytics &middot; Methodology v2.3</div>
 </div>
 
 <div class="container">
-<div class="alert-bar"><strong style="color:var(--neon)">[W30 &mdash; Production &mdash; 7/20&rarr;7/26]</strong> Dutchie GAP_BACKFILL, dedupe by transactionId, Retail-type only. UKG Counter 07/20&ndash;07/26. Product catalog + customer history joins live this cycle. Labor reported as hours only (no $ payroll cost) per standing W30 methodology.</div>
+<div class="alert-bar"><strong style="color:var(--neon)">[W31 &mdash; Production &mdash; 7/27&rarr;8/2]</strong> Dutchie GAP_BACKFILL, dedupe by transactionId, Retail-type only. UKG Counter 07/27&ndash;08/02. Product/customer catalog joins live; SKU net-sales scaling applied per methodology.</div>
 
-<div class="sec-title">I. Operations Snapshot &mdash; Week Ending 2026-07-26 <span class="right">Insight 1 &middot; 7/7 days</span></div>
+<div class="sec-title">I. Operations Snapshot &mdash; Week Ending 2026-08-02 <span class="right">Insight 1 &middot; 7/7 days</span></div>
 <div class="grid5">
- <div class="kpi"><div class="kpi-label">Net Sales &middot; Week</div><div class="kpi-val">$24,287.41</div><div class="kpi-sub">530 transactions &middot; 7/7 days</div></div>
- <div class="kpi"><div class="kpi-label">Prior Wk Net (W29)</div><div class="kpi-val">$24,624.58</div><div class="kpi-sub neutral">515 txns</div></div>
- <div class="kpi"><div class="kpi-label">WoW &Delta; &middot; Insight 8</div><div class="kpi-val" style="color:var(--alert)">-1.4%</div><div class="kpi-sub">$-337.17 vs W29</div></div>
- <div class="kpi"><div class="kpi-label">Avg Basket (AOV)</div><div class="kpi-val">$45.83</div><div class="kpi-sub neutral">Net $ / Txns</div></div>
- <div class="kpi"><div class="kpi-label">Labor % of Net Sales</div><div class="kpi-val" style="color:var(--warn)">23.4%</div><div class="kpi-sub neutral">$5,683.39 / $24,287.41</div></div>
+ <div class="kpi"><div class="kpi-label">Net Sales &middot; Week</div><div class="kpi-val">$24,187.88</div><div class="kpi-sub neutral">541 transactions &middot; 7/7 days</div></div>
+ <div class="kpi"><div class="kpi-label">Prior Wk Net (W30)</div><div class="kpi-val">$24,287.41</div><div class="kpi-sub neutral">530 txns</div></div>
+ <div class="kpi"><div class="kpi-label">WoW &Delta; &middot; Insight 8</div><div class="kpi-val" style="color:var(--alert)">-0.4%</div><div class="kpi-sub neutral">$-99.53 vs W30</div></div>
+ <div class="kpi"><div class="kpi-label">Avg Basket (AOV)</div><div class="kpi-val">$44.71</div><div class="kpi-sub neutral">Net $ / Txns</div></div>
+ <div class="kpi"><div class="kpi-label">Labor % of Net Sales</div><div class="kpi-val" style="color:var(--warn)">25.5%</div><div class="kpi-sub neutral">$6,159.37 / $24,187.88</div></div>
 </div>
 <div class="grid5">
- <div class="kpi ember"><div class="kpi-label">Worked Hours</div><div class="kpi-val">158.2</div><div class="kpi-sub neutral">6 emps &middot; UKG Counter</div></div>
- <div class="kpi ember"><div class="kpi-label">Payroll Cost</div><div class="kpi-val">$3,339.89</div><div class="kpi-sub neutral">$21.12/hr blended</div></div>
- <div class="kpi ember"><div class="kpi-label">Security Cost</div><div class="kpi-val">$2,343.50</div><div class="kpi-sub neutral">Confirmed by Brett this cycle</div></div>
- <div class="kpi ember"><div class="kpi-label">Sales per Labor $</div><div class="kpi-val">$4.27</div><div class="kpi-sub neutral">Revenue / $1 total labor</div></div>
- <div class="kpi ember"><div class="kpi-label">Tax Regime</div><div class="kpi-val" style="font-size:9pt">CA</div><div class="kpi-sub neutral">CA excise + sales tax</div></div>
+ <div class="kpi ember"><div class="kpi-label">Worked Hours</div><div class="kpi-val">162.3</div><div class="kpi-sub neutral">6 emps &middot; UKG Counter</div></div>
+ <div class="kpi ember"><div class="kpi-label">Payroll Cost</div><div class="kpi-val">$3,343.12</div><div class="kpi-sub neutral">$20.60/hr blended</div></div>
+ <div class="kpi ember"><div class="kpi-label">Security Cost</div><div class="kpi-val">$2,816.25</div><div class="kpi-sub neutral">Confirmed by Brett this cycle</div></div>
+ <div class="kpi ember"><div class="kpi-label">Sales per Labor $</div><div class="kpi-val">$3.93</div><div class="kpi-sub neutral">Net Sales / $1 total labor</div></div>
+ <div class="kpi ember"><div class="kpi-label">Tax Regime</div><div class="kpi-val">CA</div><div class="kpi-sub neutral">CA excise + sales tax</div></div>
 </div>
 <div class="grid5">
- <div class="kpi"><div class="kpi-label">Unique Customers</div><div class="kpi-val">418</div><div class="kpi-sub neutral">100% matched to roster</div></div>
- <div class="kpi"><div class="kpi-label">New Customers</div><div class="kpi-val">30</div><div class="kpi-sub neutral">First txn this week</div></div>
- <div class="kpi"><div class="kpi-label">Distinct SKUs Sold</div><div class="kpi-val">543</div><div class="kpi-sub neutral">100% catalog matched</div></div>
+ <div class="kpi"><div class="kpi-label">Unique Customers</div><div class="kpi-val">446</div><div class="kpi-sub neutral">99.6% matched to roster</div></div>
+ <div class="kpi"><div class="kpi-label">New Customers</div><div class="kpi-val">32</div><div class="kpi-sub neutral">First txn this week</div></div>
+ <div class="kpi"><div class="kpi-label">Distinct SKUs Sold</div><div class="kpi-val">527</div><div class="kpi-sub neutral">100% catalog matched</div></div>
 </div>
 
 <div class="sec-title">II. Recommended Actions <span class="right">Sorted by severity</span></div>
-<div class="card"><div class="alert-bar"><span class="tag up">NOTE</span>&nbsp;<strong>Security cost this cycle: $2,343.50/wk</strong> (confirmed by Brett), split evenly across 7am–9pm operating hours.</div><div class="alert-bar info"><span class="tag info">PIPELINE</span>&nbsp;<strong>Product/customer catalog joins are live this cycle</strong> — SKU names and customer match now populated (tickets #LINE-ITEMS-CATALOG-001 / #CUST-HISTORY-001 resolved as of W30).</div></div>
+<div class="card"><div class="alert-bar"><span class="tag up">NOTE</span>&nbsp;<strong>Security cost this cycle: $2,816.25/wk</strong> (confirmed by Brett), up from $2,343.50/wk last cycle.</div><div class="alert-bar warn"><span class="tag est">FLAG</span>&nbsp;<strong>Data issue resolved:</strong> This cycle's initial GAP_BACKFILL export was truncated mid-day on 8/1 (only 7 txns vs a normal ~80-90). Patrick re-pulled a corrected file same-day; this dashboard uses the corrected 7-day dataset.</div></div>
 
-<div class="sec-title">III. Daily Sales Trend &mdash; W30 <span class="right">Insight 2 &middot; Neon = sales</span></div>
+<div class="sec-title">III. Daily Sales Trend &mdash; W31 <span class="right">Insight 2 &middot; Neon = sales</span></div>
 <div class="card">
  <div class="day-bar-wrap"><div class="day-bar"><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$2,535.61</span><span class="day-aov-lbl">AOV $40.25</span></div>
- <div class="bar-outer" style="height:70px"><div class="bar-sales" style="height:38px"></div><div class="bar-labor" style="height:18px"></div></div>
- <div class="day-bottom"><span class="day-dow">MON</span><span class="day-date-lbl">7/20</span><span class="day-labor-lbl">$832 / 32.8%</span></div>
+<div class="day-top"><span class="day-val-lbl">$2,952.04</span><span class="day-aov-lbl">AOV $38.34</span></div>
+<div class="bar-outer" style="height:108px"><div class="bar-labor" style="height:17px"></div><div class="bar-sales" style="height:84px"></div></div>
+<div class="day-bottom"><span class="day-dow">MON</span><span class="day-date-lbl">7/27</span><span class="day-labor-lbl">$885 / 30.0%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$3,023.95</span><span class="day-aov-lbl">AOV $46.52</span></div>
- <div class="bar-outer" style="height:80px"><div class="bar-sales" style="height:53px"></div><div class="bar-labor" style="height:13px"></div></div>
- <div class="day-bottom"><span class="day-dow">TUE</span><span class="day-date-lbl">7/21</span><span class="day-labor-lbl">$628 / 20.8%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,254.62</span><span class="day-aov-lbl">AOV $51.66</span></div>
+<div class="bar-outer" style="height:115px"><div class="bar-labor" style="height:18px"></div><div class="bar-sales" style="height:89px"></div></div>
+<div class="day-bottom"><span class="day-dow">TUE</span><span class="day-date-lbl">7/28</span><span class="day-labor-lbl">$877 / 26.9%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$3,736.93</span><span class="day-aov-lbl">AOV $49.17</span></div>
- <div class="bar-outer" style="height:96px"><div class="bar-sales" style="height:64px"></div><div class="bar-labor" style="height:18px"></div></div>
- <div class="day-bottom"><span class="day-dow">WED</span><span class="day-date-lbl">7/22</span><span class="day-labor-lbl">$838 / 22.4%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,544.06</span><span class="day-aov-lbl">AOV $47.25</span></div>
+<div class="bar-outer" style="height:122px"><div class="bar-labor" style="height:19px"></div><div class="bar-sales" style="height:95px"></div></div>
+<div class="day-bottom"><span class="day-dow">WED</span><span class="day-date-lbl">7/29</span><span class="day-labor-lbl">$867 / 24.5%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$3,020.87</span><span class="day-aov-lbl">AOV $43.78</span></div>
- <div class="bar-outer" style="height:80px"><div class="bar-sales" style="height:51px"></div><div class="bar-labor" style="height:15px"></div></div>
- <div class="day-bottom"><span class="day-dow">THU</span><span class="day-date-lbl">7/23</span><span class="day-labor-lbl">$692 / 22.9%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,574.47</span><span class="day-aov-lbl">AOV $43.07</span></div>
+<div class="bar-outer" style="height:122px"><div class="bar-labor" style="height:19px"></div><div class="bar-sales" style="height:95px"></div></div>
+<div class="day-bottom"><span class="day-dow">THU</span><span class="day-date-lbl">7/30</span><span class="day-labor-lbl">$868 / 24.3%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$5,242.65</span><span class="day-aov-lbl">AOV $49.93</span></div>
- <div class="bar-outer" style="height:130px"><div class="bar-sales" style="height:96px"></div><div class="bar-labor" style="height:20px"></div></div>
- <div class="day-bottom"><span class="day-dow">FRI</span><span class="day-date-lbl">7/24</span><span class="day-labor-lbl">$941 / 17.9%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,715.18</span><span class="day-aov-lbl">AOV $46.44</span></div>
+<div class="bar-outer" style="height:126px"><div class="bar-labor" style="height:20px"></div><div class="bar-sales" style="height:98px"></div></div>
+<div class="day-bottom"><span class="day-dow">FRI</span><span class="day-date-lbl">7/31</span><span class="day-labor-lbl">$911 / 24.5%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$4,178.61</span><span class="day-aov-lbl">AOV $44.93</span></div>
- <div class="bar-outer" style="height:106px"><div class="bar-sales" style="height:73px"></div><div class="bar-labor" style="height:19px"></div></div>
- <div class="day-bottom"><span class="day-dow">SAT</span><span class="day-date-lbl">7/25</span><span class="day-labor-lbl">$886 / 21.2%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,271.26</span><span class="day-aov-lbl">AOV $45.43</span></div>
+<div class="bar-outer" style="height:115px"><div class="bar-labor" style="height:18px"></div><div class="bar-sales" style="height:89px"></div></div>
+<div class="day-bottom"><span class="day-dow">SAT</span><span class="day-date-lbl">8/1</span><span class="day-labor-lbl">$883 / 27.0%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$2,548.79</span><span class="day-aov-lbl">AOV $43.20</span></div>
- <div class="bar-outer" style="height:70px"><div class="bar-sales" style="height:37px"></div><div class="bar-labor" style="height:19px"></div></div>
- <div class="day-bottom"><span class="day-dow">SUN</span><span class="day-date-lbl">7/26</span><span class="day-labor-lbl">$867 / 34.0%</span></div>
+<div class="day-top"><span class="day-val-lbl">$3,876.25</span><span class="day-aov-lbl">AOV $42.60</span></div>
+<div class="bar-outer" style="height:130px"><div class="bar-labor" style="height:20px"></div><div class="bar-sales" style="height:101px"></div></div>
+<div class="day-bottom"><span class="day-dow">SUN</span><span class="day-date-lbl">8/2</span><span class="day-labor-lbl">$869 / 22.4%</span></div>
 </div></div></div>
  <div class="bar-legend"><span><span class="swatch" style="background:var(--neon)"></span>Daily net sales</span><span><span class="swatch" style="background:var(--ember)"></span>Labor cost overlay (payroll + security, % of that day's sales)</span></div>
 </div>
 
-<div class="sec-title">IV. Staffing-vs-Demand Review <span class="right">Permanent &middot; v2.3 &sect;5b</span></div>
+<div class="sec-title">IV. Staffing-vs-Demand Review <span class="right">NEW this cycle &middot; Day-part heatmap</span></div>
+<div class="card">
+<table><tr><th>Day-Part</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr><tr><td style="font-weight:700;color:var(--neon)">Morning<div style="font-size:6pt;color:var(--muted);font-weight:400">7a-11a</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Monday" data-part="Morning" data-window="7a-11a" data-sales="$948.49" data-hours="4.0h" data-rate="$236/hr" data-norm="1.58x" data-txns="19"><div style="font-weight:800;font-size:9.5pt">1.58</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$948 / 4h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Tuesday" data-part="Morning" data-window="7a-11a" data-sales="$1,075.38" data-hours="5.0h" data-rate="$217/hr" data-norm="1.45x" data-txns="14"><div style="font-weight:800;font-size:9.5pt">1.45</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.1k / 5h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Wednesday" data-part="Morning" data-window="7a-11a" data-sales="$856.28" data-hours="4.0h" data-rate="$216/hr" data-norm="1.45x" data-txns="16"><div style="font-weight:800;font-size:9.5pt">1.45</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$856 / 4h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Thursday" data-part="Morning" data-window="7a-11a" data-sales="$919.14" data-hours="4.0h" data-rate="$230/hr" data-norm="1.54x" data-txns="17"><div style="font-weight:800;font-size:9.5pt">1.54</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$919 / 4h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.45);text-align:center;padding:6px 6px;" data-day="Friday" data-part="Morning" data-window="7a-11a" data-sales="$713.56" data-hours="5.9h" data-rate="$121/hr" data-norm="0.81x" data-txns="16"><div style="font-weight:800;font-size:9.5pt">0.81</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$714 / 6h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Saturday" data-part="Morning" data-window="7a-11a" data-sales="$932.10" data-hours="4.0h" data-rate="$232/hr" data-norm="1.56x" data-txns="20"><div style="font-weight:800;font-size:9.5pt">1.56</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$932 / 4h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Sunday" data-part="Morning" data-window="7a-11a" data-sales="$1,105.04" data-hours="4.0h" data-rate="$276/hr" data-norm="1.85x" data-txns="28"><div style="font-weight:800;font-size:9.5pt">1.85</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.1k / 4h</div></td></tr><tr><td style="font-weight:700;color:var(--neon)">Midday<div style="font-size:6pt;color:var(--muted);font-weight:400">11a-3p</div></td><td class="heat-cell" style="background:rgba(239,83,80,.85);text-align:center;padding:6px 6px;" data-day="Monday" data-part="Midday" data-window="11a-3p" data-sales="$869.97" data-hours="8.9h" data-rate="$97/hr" data-norm="0.65x" data-txns="29"><div style="font-weight:800;font-size:9.5pt">0.65</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$870 / 9h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.45);text-align:center;padding:6px 6px;" data-day="Tuesday" data-part="Midday" data-window="11a-3p" data-sales="$887.37" data-hours="8.3h" data-rate="$106/hr" data-norm="0.71x" data-txns="18"><div style="font-weight:800;font-size:9.5pt">0.71</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$887 / 8h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.85);text-align:center;padding:6px 6px;" data-day="Wednesday" data-part="Midday" data-window="11a-3p" data-sales="$755.15" data-hours="8.3h" data-rate="$91/hr" data-norm="0.61x" data-txns="14"><div style="font-weight:800;font-size:9.5pt">0.61</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$755 / 8h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Thursday" data-part="Midday" data-window="11a-3p" data-sales="$1,290.88" data-hours="8.9h" data-rate="$145/hr" data-norm="0.98x" data-txns="26"><div style="font-weight:800;font-size:9.5pt">0.98</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.3k / 9h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.45);text-align:center;padding:6px 6px;" data-day="Friday" data-part="Midday" data-window="11a-3p" data-sales="$1,576.13" data-hours="7.8h" data-rate="$203/hr" data-norm="1.36x" data-txns="30"><div style="font-weight:800;font-size:9.5pt">1.36</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.6k / 8h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.45);text-align:center;padding:6px 6px;" data-day="Saturday" data-part="Midday" data-window="11a-3p" data-sales="$944.65" data-hours="9.0h" data-rate="$105/hr" data-norm="0.71x" data-txns="20"><div style="font-weight:800;font-size:9.5pt">0.71</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$945 / 9h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Sunday" data-part="Midday" data-window="11a-3p" data-sales="$1,249.45" data-hours="9.5h" data-rate="$132/hr" data-norm="0.88x" data-txns="27"><div style="font-weight:800;font-size:9.5pt">0.88</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.2k / 9h</div></td></tr><tr><td style="font-weight:700;color:var(--neon)">Afternoon<div style="font-size:6pt;color:var(--muted);font-weight:400">3p-6p</div></td><td class="heat-cell" style="background:rgba(239,83,80,.85);text-align:center;padding:6px 6px;" data-day="Monday" data-part="Afternoon" data-window="3p-6p" data-sales="$517.10" data-hours="5.7h" data-rate="$91/hr" data-norm="0.61x" data-txns="13"><div style="font-weight:800;font-size:9.5pt">0.61</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$517 / 6h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.85);text-align:center;padding:6px 6px;" data-day="Tuesday" data-part="Afternoon" data-window="3p-6p" data-sales="$517.31" data-hours="6.6h" data-rate="$79/hr" data-norm="0.53x" data-txns="15"><div style="font-weight:800;font-size:9.5pt">0.53</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$517 / 7h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Wednesday" data-part="Afternoon" data-window="3p-6p" data-sales="$1,048.43" data-hours="6.5h" data-rate="$161/hr" data-norm="1.08x" data-txns="23"><div style="font-weight:800;font-size:9.5pt">1.08</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$1.0k / 6h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Thursday" data-part="Afternoon" data-window="3p-6p" data-sales="$686.70" data-hours="5.2h" data-rate="$131/hr" data-norm="0.88x" data-txns="20"><div style="font-weight:800;font-size:9.5pt">0.88</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$687 / 5h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.45);text-align:center;padding:6px 6px;" data-day="Friday" data-part="Afternoon" data-window="3p-6p" data-sales="$636.94" data-hours="5.7h" data-rate="$112/hr" data-norm="0.75x" data-txns="15"><div style="font-weight:800;font-size:9.5pt">0.75</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$637 / 6h</div></td><td class="heat-cell" style="background:rgba(239,83,80,.45);text-align:center;padding:6px 6px;" data-day="Saturday" data-part="Afternoon" data-window="3p-6p" data-sales="$663.35" data-hours="5.2h" data-rate="$126/hr" data-norm="0.85x" data-txns="15"><div style="font-weight:800;font-size:9.5pt">0.85</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$663 / 5h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Sunday" data-part="Afternoon" data-window="3p-6p" data-sales="$745.89" data-hours="5.7h" data-rate="$132/hr" data-norm="0.89x" data-txns="16"><div style="font-weight:800;font-size:9.5pt">0.89</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$746 / 6h</div></td></tr><tr><td style="font-weight:700;color:var(--neon)">Evening<div style="font-size:6pt;color:var(--muted);font-weight:400">6p-9p</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Monday" data-part="Evening" data-window="6p-9p" data-sales="$590.89" data-hours="4.6h" data-rate="$129/hr" data-norm="0.87x" data-txns="15"><div style="font-weight:800;font-size:9.5pt">0.87</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$591 / 5h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Tuesday" data-part="Evening" data-window="6p-9p" data-sales="$774.56" data-hours="3.0h" data-rate="$258/hr" data-norm="1.73x" data-txns="16"><div style="font-weight:800;font-size:9.5pt">1.73</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$775 / 3h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Wednesday" data-part="Evening" data-window="6p-9p" data-sales="$884.20" data-hours="3.6h" data-rate="$248/hr" data-norm="1.66x" data-txns="22"><div style="font-weight:800;font-size:9.5pt">1.66</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$884 / 4h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Thursday" data-part="Evening" data-window="6p-9p" data-sales="$677.75" data-hours="4.2h" data-rate="$163/hr" data-norm="1.09x" data-txns="20"><div style="font-weight:800;font-size:9.5pt">1.09</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$678 / 4h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Friday" data-part="Evening" data-window="6p-9p" data-sales="$717.39" data-hours="4.8h" data-rate="$149/hr" data-norm="1.00x" data-txns="18"><div style="font-weight:800;font-size:9.5pt">1.00</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$717 / 5h</div></td><td class="heat-cell" style="background:rgba(255,255,255,.10);text-align:center;padding:6px 6px;" data-day="Saturday" data-part="Evening" data-window="6p-9p" data-sales="$731.16" data-hours="4.6h" data-rate="$161/hr" data-norm="1.08x" data-txns="17"><div style="font-weight:800;font-size:9.5pt">1.08</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$731 / 5h</div></td><td class="heat-cell" style="background:rgba(197,232,71,.85);text-align:center;padding:6px 6px;" data-day="Sunday" data-part="Evening" data-window="6p-9p" data-sales="$775.87" data-hours="3.1h" data-rate="$253/hr" data-norm="1.70x" data-txns="20"><div style="font-weight:800;font-size:9.5pt">1.70</div><div style="font-size:7.5pt;color:var(--cream);font-weight:600;margin-top:1px">$776 / 3h</div></td></tr></table>
+<div class="bar-legend" style="margin-top:7px;">
+ <span style="font-weight:700;color:var(--muted)">Understaffed</span>
+ <span><span class="swatch" style="background:rgba(239,83,80,.85)"></span></span>
+ <span><span class="swatch" style="background:rgba(239,83,80,.45)"></span></span>
+ <span><span class="swatch" style="background:rgba(255,255,255,.12)"></span></span>
+ <span><span class="swatch" style="background:rgba(197,232,71,.45)"></span></span>
+ <span><span class="swatch" style="background:rgba(197,232,71,.85)"></span></span>
+ <span style="font-weight:700;color:var(--muted)">Balanced / Slack</span>
+</div>
+<div class="note">Cell = that window's $/labor-hr, normalized against <strong>this store's own weekly average $/labor-hr</strong> (1.00 = performing at this store's typical rate). Below ~0.85 = understaffed relative to this store's own norm; above ~1.15 = slack. Sales side from GAP_BACKFILL transactionDateLocalTime; labor side from UKG DetailedHours punch export (Start/End), Retail department only. Store hours 7a&ndash;9p.</div>
+</div>
 <div class="card"><table><tr><th>Day</th><th>Open Hrs</th><th>Worked Hrs</th><th>Avg Emp/Hr</th><th>Net Sales</th><th>$/Labor-Hr</th><th>Sales:Labor</th></tr>
-<tr><td><strong>MON</strong> 7/20</td><td>14</td><td>21.8</td><td>1.56</td><td>$2,535.61</td><td>$116</td><td>$3.05:$1</td></tr><tr><td><strong>TUE</strong> 7/21</td><td>14</td><td>15.2</td><td>1.09</td><td>$3,023.95</td><td>$199</td><td>$4.82:$1</td></tr><tr><td><strong>WED</strong> 7/22</td><td>14</td><td>20.9</td><td>1.49</td><td>$3,736.93</td><td>$179</td><td>$4.46:$1</td></tr><tr><td><strong>THU</strong> 7/23</td><td>14</td><td>19.3</td><td>1.38</td><td>$3,020.87</td><td>$156</td><td>$4.37:$1</td></tr><tr><td><strong>FRI</strong> 7/24</td><td>14</td><td>27.9</td><td>1.99</td><td>$5,242.65</td><td>$188</td><td>$5.57:$1</td></tr><tr><td><strong>SAT</strong> 7/25</td><td>14</td><td>28.9</td><td>2.07</td><td>$4,178.61</td><td>$144</td><td>$4.71:$1</td></tr><tr><td><strong>SUN</strong> 7/26</td><td>14</td><td>24.1</td><td>1.72</td><td>$2,548.79</td><td>$106</td><td>$2.94:$1</td></tr>
+<tr><td><strong>MON</strong> 7/27</td><td>14</td><td>23.4</td><td>1.67</td><td>$2,952.04</td><td>$126</td><td>$3.34:$1</td></tr><tr><td><strong>TUE</strong> 7/28</td><td>14</td><td>23.0</td><td>1.65</td><td>$3,254.62</td><td>$141</td><td>$3.71:$1</td></tr><tr><td><strong>WED</strong> 7/29</td><td>14</td><td>22.6</td><td>1.61</td><td>$3,544.06</td><td>$157</td><td>$4.09:$1</td></tr><tr><td><strong>THU</strong> 7/30</td><td>14</td><td>22.6</td><td>1.62</td><td>$3,574.47</td><td>$158</td><td>$4.12:$1</td></tr><tr><td><strong>FRI</strong> 7/31</td><td>14</td><td>24.7</td><td>1.76</td><td>$3,715.18</td><td>$151</td><td>$4.08:$1</td></tr><tr><td><strong>SAT</strong> 8/1</td><td>14</td><td>23.3</td><td>1.67</td><td>$3,271.26</td><td>$140</td><td>$3.70:$1</td></tr><tr><td><strong>SUN</strong> 8/2</td><td>14</td><td>22.6</td><td>1.62</td><td>$3,876.25</td><td>$171</td><td>$4.46:$1</td></tr>
 </table>
-<div class="note">$/Labor-Hr = net sales per hour worked. Sales:Labor = net sales per $1 of total labor cost (payroll + security). Total worked hours this week: 158.2 across 6 employees; blended payroll rate $21.12/hr.</div>
+<div class="note">$/Labor-Hr = net sales per hour worked. Sales:Labor = net sales per $1 of total labor cost (payroll + security). Total worked hours this week: 162.3 across 6 employees; blended payroll rate $20.60/hr.</div>
 </div>
 
 <div class="sec-title">V. Period-over-Period Comparison <span class="right">Insights 6, 7, 8</span></div>
 <div class="card">
  <table>
- <tr><th>Metric</th><th>W30 (7/20&rarr;7/26)</th><th>W29 (7/13&rarr;7/19)</th><th>WoW &Delta;$</th><th>WoW &Delta;%</th></tr>
- <tr><td>Net Sales</td><td style="font-weight:700">$24,287.41</td><td>$24,624.58</td><td style="color:var(--alert);font-weight:700">$-337.17</td><td style="color:var(--alert);font-weight:700">-1.4%</td></tr>
- <tr><td>Transactions</td><td style="font-weight:700">530</td><td>515</td><td style="color:var(--leaf)">+15</td><td>+2.9%</td></tr>
- <tr><td>Avg Basket</td><td style="font-weight:700">$45.83</td><td>$47.81</td><td style="color:var(--alert)">$-1.98</td><td>-4.2%</td></tr>
+ <tr><th>Metric</th><th>W31 (7/27&rarr;8/2)</th><th>W30 (7/20&rarr;7/26)</th><th>WoW &Delta;$</th><th>WoW &Delta;%</th></tr>
+ <tr><td>Net Sales</td><td style="font-weight:700">$24,187.88</td><td>$24,287.41</td><td style="color:var(--alert);font-weight:700">$-99.53</td><td style="color:var(--alert);font-weight:700">-0.4%</td></tr>
+ <tr><td>Transactions</td><td style="font-weight:700">541</td><td>530</td><td style="color:var(--leaf)">+11</td><td>+2.1%</td></tr>
+ <tr><td>Avg Basket</td><td style="font-weight:700">$44.71</td><td>$45.83</td><td style="color:var(--alert)">$-1.12</td><td>-2.4%</td></tr>
  </table>
- <div class="note">WoW vs W29 (Jul 13&ndash;Jul 19) using totalBeforeTax per methodology.</div>
+ <div class="note">WoW vs W30 (Jul 20&ndash;Jul 26) using totalBeforeTax per methodology.</div>
 </div>
 
 <div class="sec-title">VI. Potential External Causes of Sales Changes <span class="right">&sect;6.5 &middot; EMBR Lake Elsinore</span></div>
-<div class="card"><div class="note">Fresh competitive research conducted this cycle (see Section VIII). WoW movement of -1.4% reflects normal week-to-week variance absent a specific identified external driver, unless noted in Section VIII.</div></div>
+<div class="card"><div class="note">Fresh competitive research conducted this cycle via live Weedmaps browser check (see Section VIII). Our Flower category (top category, $8,740 net sales this week) averages ~$25.78/line item. Both live-checked local competitors are running storewide discounts of 30-50% this cycle, pricing premium 3.5g flower as low as $13-30 after discount &mdash; materially below our shelf pricing on comparable premium SKUs. Two of two live-checked competitors exceed the 25%-promo flag threshold in our top category. WoW movement of -0.4% is modest by comparison, suggesting our customer base hasn't yet meaningfully shifted toward these promos, but it's a watch item for next cycle.</div></div>
 
-<div class="sec-title">VII. Top Performers <span class="right">Insight 3 &middot; sorted by Wk Net Sales</span></div>
+<div class="sec-title">VII. Top Performers <span class="right">Insight 3 &middot; full roster, sorted by Wk Net Sales</span></div>
 <div class="card">
- <h2>Budtenders / Cashiers who worked this period <span class="sub">&middot; Top 10 by net sales</span></h2>
- <table><tr><th>#</th><th>Employee (UKG)</th><th>Wk Hrs</th><th>Wk Net Sales</th><th>Txns</th><th>AOV</th><th>Txns/Hr</th></tr>
-<tr><td style="font-weight:800;color:var(--neon)">1</td><td>Colleen Loffer-Elliott</td><td>34.01</td><td style="font-weight:700">$6,427.63</td><td>139</td><td>$46.24</td><td>4.09</td></tr><tr><td style="font-weight:800;color:var(--neon)">2</td><td>Briana Gustavesen</td><td>25.07</td><td style="font-weight:700">$4,868.08</td><td>105</td><td>$46.36</td><td>4.19</td></tr><tr><td style="font-weight:800;color:var(--neon)">3</td><td>Jessica Hernandez</td><td>37.23</td><td style="font-weight:700">$4,357.69</td><td>98</td><td>$44.47</td><td>2.63</td></tr><tr><td style="font-weight:800;color:var(--neon)">4</td><td>Marissa Oseguera</td><td>25.62</td><td style="font-weight:700">$3,591.75</td><td>82</td><td>$43.80</td><td>3.20</td></tr><tr><td style="font-weight:800;color:var(--neon)">5</td><td>Keisha Jordan</td><td>18.38</td><td style="font-weight:700">$2,576.11</td><td>54</td><td>$47.71</td><td>2.94</td></tr><tr><td style="font-weight:800;color:var(--neon)">6</td><td>Nicole Rodriguez</td><td>17.86</td><td style="font-weight:700">$2,466.15</td><td>52</td><td>$47.43</td><td>2.91</td></tr>
+ <h2>Budtenders / Cashiers &mdash; full roster this period <span class="sub">&middot; 6 employees</span></h2>
+ <table><tr><th>#</th><th>Employee (UKG)</th><th>Days Worked</th><th>Wk Hrs</th><th>Wk Net Sales</th><th>Txns</th><th>AOV</th><th>Txns/Hr</th></tr>
+<tr><td style="font-weight:800;color:var(--neon)">1</td><td>Marissa Oseguera</td><td style="white-space:nowrap"><span class="dow">MON</span><span class="dow">WED</span><span class="dow">FRI</span><span class="dow">SAT</span><span class="dow">SUN</span></td><td>36.42</td><td style="font-weight:700">$5,865.49</td><td>136</td><td>$43.13</td><td>3.73</td></tr><tr><td style="font-weight:800;color:var(--neon)">2</td><td>Jessica Hernandez</td><td style="white-space:nowrap"><span class="dow">MON</span><span class="dow">TUE</span><span class="dow">WED</span><span class="dow">SUN</span></td><td>33.74</td><td style="font-weight:700">$5,807.03</td><td>121</td><td>$47.99</td><td>3.59</td></tr><tr><td style="font-weight:800;color:var(--neon)">3</td><td>Keisha Jordan</td><td style="white-space:nowrap"><span class="dow">THU</span><span class="dow">FRI</span><span class="dow">SAT</span></td><td>20.47</td><td style="font-weight:700">$2,865.51</td><td>61</td><td>$46.98</td><td>2.98</td></tr><tr><td style="font-weight:800;color:var(--neon)">4</td><td>Nicole Rodriguez</td><td style="white-space:nowrap"><span class="dow">MON</span><span class="dow">FRI</span><span class="dow">SUN</span></td><td>19.38</td><td style="font-weight:700">$2,418.22</td><td>66</td><td>$36.64</td><td>3.41</td></tr><tr><td style="font-weight:800;color:var(--neon)">5</td><td>Briana Gustavesen</td><td style="white-space:nowrap"><span class="dow">TUE</span><span class="dow">WED</span><span class="dow">THU</span><span class="dow">FRI</span></td><td>28.99</td><td style="font-weight:700">$0.00</td><td>0</td><td>$0.00</td><td>0.00</td></tr><tr><td style="font-weight:800;color:var(--neon)">6</td><td>Colleen Loffer-Elliott</td><td style="white-space:nowrap"><span class="dow">TUE</span><span class="dow">THU</span><span class="dow">SAT</span></td><td>23.32</td><td style="font-weight:700">$0.00</td><td>0</td><td>$0.00</td><td>0.00</td></tr>
  </table>
  <div class="note">6 total employees on schedule this cycle. Hours from UKG Counter (Regular + OT), sales from Dutchie completedByUser join with known alias corrections applied.</div>
 </div>
 
 <div class="grid3">
  <div class="card"><h2>Top SKUs by Units <span class="sub">&middot; Insight 4</span></h2>
- <table><tr><th>#</th><th>Product</th><th>Vendor</th><th>Units</th><th>Avg $</th><th>Revenue</th></tr>
-<tr><td style="font-weight:700;color:var(--neon)">1</td><td style="font-size:7pt">Dr. Norms Sleepwell Elderberry CBN Gummi</td><td>PUNCH MEDIA, LLC</td><td>8</td><td>$11.74</td><td style="font-weight:700">$94</td></tr><tr><td style="font-weight:700;color:var(--neon)">2</td><td style="font-size:7pt">Top Shelf Cultivation Skywalker OG Indic</td><td>BARLOW PRINTING, LLC</td><td>4</td><td>$31.18</td><td style="font-weight:700">$125</td></tr><tr><td style="font-weight:700;color:var(--neon)">3</td><td style="font-size:7pt">Fig Farms Flower Fig OG Hybrid Indica 3.</td><td>ZASP</td><td>3</td><td>$31.66</td><td style="font-weight:700">$95</td></tr><tr><td style="font-weight:700;color:var(--neon)">4</td><td style="font-size:7pt">Galaxy Moonrock Preroll Chicken & Waffle</td><td>Infinite Star Industries, LLC</td><td>2</td><td>$20.50</td><td style="font-weight:700">$41</td></tr><tr><td style="font-weight:700;color:var(--neon)">5</td><td style="font-size:7pt">Galaxy Moonrock Preroll Original OG 5pk</td><td>Infinite Star Industries, LLC</td><td>2</td><td>$21.59</td><td style="font-weight:700">$43</td></tr>
+ <table><tr><th>#</th><th>Product</th><th>Vendor</th><th>Units</th><th>Avg $</th><th>Net Sales</th></tr>
+<tr><td style="font-weight:700;color:var(--neon)">1</td><td style="font-size:7pt">Phat Panda Platinum Smash Burger Preroll Promo</td><td>CDXX VIRTUOSI GROUP LLC</td><td>165</td><td>$0.01</td><td style="font-weight:700">$1</td></tr><tr><td style="font-weight:700;color:var(--neon)">2</td><td style="font-size:7pt">Phat Panda Platinum Preroll Jack Herer Deal 1G</td><td>CDXX VIRTUOSI GROUP LLC</td><td>125</td><td>$1.27</td><td style="font-weight:700">$158</td></tr><tr><td style="font-weight:700;color:var(--neon)">3</td><td style="font-size:7pt">Phat Panda Platinum Preroll Dirty Martini 1G</td><td>CDXX VIRTUOSI GROUP LLC</td><td>61</td><td>$1.15</td><td style="font-weight:700">$70</td></tr><tr><td style="font-weight:700;color:var(--neon)">4</td><td style="font-size:7pt">Snicklefritz Flower Non GMO 14g</td><td>MODERN LEAF CULTURE, INC.</td><td>56</td><td>$20.17</td><td style="font-weight:700">$1,130</td></tr><tr><td style="font-weight:700;color:var(--neon)">5</td><td style="font-size:7pt">Snicklefritz Flower Lemon Cherry Gelato 14G</td><td>MODERN LEAF CULTURE, INC.</td><td>50</td><td>$27.47</td><td style="font-weight:700">$1,373</td></tr>
  </table></div>
- <div class="card"><h2>Top SKUs by Revenue <span class="sub">&middot; Insight 5</span></h2>
- <table><tr><th>#</th><th>Product</th><th>Vendor</th><th>Units</th><th>Avg $</th><th>Revenue</th></tr>
-<tr><td style="font-weight:700;color:var(--neon)">1</td><td style="font-size:7pt">Top Shelf Cultivation Skywalker OG Indic</td><td>BARLOW PRINTING, LLC</td><td>4</td><td>$31.18</td><td style="font-weight:700">$125</td></tr><tr><td style="font-weight:700;color:var(--neon)">2</td><td style="font-size:7pt">Fig Farms Flower Fig OG Hybrid Indica 3.</td><td>ZASP</td><td>3</td><td>$31.66</td><td style="font-weight:700">$95</td></tr><tr><td style="font-weight:700;color:var(--neon)">3</td><td style="font-size:7pt">Dr. Norms Sleepwell Elderberry CBN Gummi</td><td>PUNCH MEDIA, LLC</td><td>8</td><td>$11.74</td><td style="font-weight:700">$94</td></tr><tr><td style="font-weight:700;color:var(--neon)">4</td><td style="font-size:7pt">Josh Wax Flower Seabiscuit 3.5g</td><td>ZASP</td><td>2</td><td>$33.98</td><td style="font-weight:700">$68</td></tr><tr><td style="font-weight:700;color:var(--neon)">5</td><td style="font-size:7pt">Galaxy Moonrock Preroll Original OG 5pk</td><td>Infinite Star Industries, LLC</td><td>2</td><td>$21.59</td><td style="font-weight:700">$43</td></tr>
+ <div class="card"><h2>Top SKUs by Net Sales <span class="sub">&middot; Insight 5</span></h2>
+ <table><tr><th>#</th><th>Product</th><th>Vendor</th><th>Units</th><th>Avg $</th><th>Net Sales</th></tr>
+<tr><td style="font-weight:700;color:var(--neon)">1</td><td style="font-size:7pt">Snicklefritz Flower Lemon Cherry Gelato 14G</td><td>MODERN LEAF CULTURE, INC.</td><td>50</td><td>$27.47</td><td style="font-weight:700">$1,373</td></tr><tr><td style="font-weight:700;color:var(--neon)">2</td><td style="font-size:7pt">Snicklefritz Flower Non GMO 14g</td><td>MODERN LEAF CULTURE, INC.</td><td>56</td><td>$20.17</td><td style="font-weight:700">$1,130</td></tr><tr><td style="font-weight:700;color:var(--neon)">3</td><td style="font-size:7pt">Dab Daddy Flower 90's OG 14G</td><td>Valley Of the Sun</td><td>8</td><td>$52.87</td><td style="font-weight:700">$423</td></tr><tr><td style="font-weight:700;color:var(--neon)">4</td><td style="font-size:7pt">Snicklefritz Flower Just the Tip 14g</td><td>MODERN LEAF CULTURE, INC.</td><td>15</td><td>$27.20</td><td style="font-weight:700">$408</td></tr><tr><td style="font-weight:700;color:var(--neon)">5</td><td style="font-size:7pt">Dab Daddy Flower Hash Burger 3.5G</td><td>Valley Of the Sun</td><td>15</td><td>$18.98</td><td style="font-weight:700">$285</td></tr>
  </table></div>
  <div class="card"><h2>Customer Metrics <span class="sub">&middot; Insight 9</span></h2>
- <div class="row"><span class="label">Unique customers</span><span class="val">418 (100% matched)</span></div>
- <div class="row"><span class="label">Net $ per customer</span><span class="val">$58.10</span></div>
- <div class="row"><span class="label">New customers (first txn)</span><span class="val">30</span></div>
- <div class="row"><span class="label">Txns per day (avg)</span><span class="val">76</span></div>
- <div class="row"><span class="label">Peak day</span><span class="val">FRI 7/24</span></div>
+ <div class="row"><span class="label">Unique customers</span><span class="val">446 (99.6% matched)</span></div>
+ <div class="row"><span class="label">Net $ per customer</span><span class="val">$54.23</span></div>
+ <div class="row"><span class="label">New customers (first txn)</span><span class="val">32</span></div>
+ <div class="row"><span class="label">Txns per day (avg)</span><span class="val">77</span></div>
+ <div class="row"><span class="label">Peak day</span><span class="val">SUN 8/2</span></div>
  </div>
 </div>
 
 <div class="sec-title">VIII. Competitive Landscape <span class="right">Insight 10 &middot; &sect;9A Threat Matrix</span></div>
 <div class="card"><h2>&sect;9A &mdash; EMBR Lake Elsinore Threat Matrix</h2>
 <table><tr><th>Competitor</th><th>Location</th><th>Rating</th><th>Threat</th><th>Notes / Action</th></tr>
-<tr><td><strong>Blazed Utopia</strong></td><td style="font-size:7.5pt">233 W Minthorn St</td><td style="font-size:7.5pt">Active</td><td><span class="tag dn">HIGH</span></td><td style="font-size:7.5pt">Aggressive value positioning; house-brand flower/concentrate.</td></tr><tr><td><strong>The Syndicate #2</strong></td><td style="font-size:7.5pt">31885 Corydon Rd STE 130</td><td style="font-size:7.5pt">Active</td><td><span class="tag dn">HIGH</span></td><td style="font-size:7.5pt">Everyday storewide discount model; 10+ CA storefronts.</td></tr><tr><td><strong>STIIIZY Lake Elsinore</strong></td><td style="font-size:7.5pt">Wildomar (regional)</td><td style="font-size:7.5pt">4.5–4.6★</td><td><span class="tag est">MED</span></td><td style="font-size:7.5pt">New entrant since ~W26; aggressive first-time/B2G1 promos.</td></tr><tr><td><strong>The Healing Tree</strong></td><td style="font-size:7.5pt">Lake Elsinore, CA</td><td style="font-size:7.5pt">4.7★ (613 reviews)</td><td><span class="tag dn">HIGH</span></td><td style="font-size:7.5pt">No material pricing changes surfaced.</td></tr>
-</table></div>
+<tr><td><strong>The Syndicate &mdash; Lake Elsinore #2</strong></td><td style="font-size:7.5pt">31885 Corydon St Unit 130 (0.1mi from our store)</td><td style="font-size:7.5pt">4.7&#9733; (306 reviews)</td><td><span class="tag dn">HIGH</span></td><td style="font-size:7.5pt">Live-checked 8/3: running <strong>50% OFF STOREWIDE</strong> (first-time customers, all month) &mdash; premium 3.5g flower (Cannabiotix) $30.56 (was $61.13), house-brand 1/8ths $13.19 (was $26.38). Well past the 25%-promo threshold in our top category (Flower). Closest competitor by address.</td></tr><tr><td><strong>Mr Nice Guy Cannabis</strong></td><td style="font-size:7.5pt">311 W Minthorn St (~1mi)</td><td style="font-size:7.5pt">5.0&#9733; (290 ratings, 3.4k reviews)</td><td><span class="tag dn">HIGH</span></td><td style="font-size:7.5pt">Live-checked 8/3: standing <strong>30% off storewide over $100</strong> + 20% off in-house daily + BOGO. Premium flower $40-70/eighth; budget "Smalls" 14g at $45 (comparable to our own ~$26 avg flower line). Open 7a-10p, longer hours than our 7a-9p.</td></tr><tr><td><strong>The Nugg Hubb</strong></td><td style="font-size:7.5pt">Lake Elsinore, CA</td><td style="font-size:7.5pt">New/growing per reviews</td><td><span class="tag est">MED</span></td><td style="font-size:7.5pt">42% first-time discount; positioning as budget-friendly newcomer. Not yet live-priced this cycle.</td></tr>
+</table>
+<div class="note" style="margin-top:8px;"><strong style="color:var(--white)">Price cross-reference (live-checked via Chrome, 2026-08-03):</strong> Our Flower category (top category, $8,740 net sales this week) averages ~$25.78/line item. Both live-checked local competitors are running storewide discounts of 30-50% this cycle, pricing premium 3.5g flower as low as $13-30 after discount &mdash; materially below our shelf pricing on comparable premium SKUs. Two of two live-checked competitors exceed the 25%-promo flag threshold in our top category.</div>
+</div>
 
-<div class="sec-title">IX. Category Performance <span class="right">Catalog join live W30</span></div>
-<div class="card"><table><tr><th>Category</th><th>Units</th><th>Revenue</th></tr>
-<tr><td>Flower</td><td>351</td><td style="font-weight:700">$9,381</td></tr><tr><td>Vaporizer</td><td>334</td><td style="font-weight:700">$7,583</td></tr><tr><td>Pre-Roll</td><td>224</td><td style="font-weight:700">$3,180</td></tr><tr><td>Edibles</td><td>172</td><td style="font-weight:700">$2,194</td></tr><tr><td>Concentrate</td><td>58</td><td style="font-weight:700">$1,146</td></tr><tr><td>Edible</td><td>40</td><td style="font-weight:700">$318</td></tr>
+<div class="sec-title">IX. Category Performance <span class="right">Catalog join live W31 &middot; all buckets shown</span></div>
+<div class="card"><table><tr><th>Category</th><th>Net Sales</th></tr>
+<tr><td>Flower</td><td style="font-weight:700">$8,740</td></tr><tr><td>Vaporizer</td><td style="font-weight:700">$6,955</td></tr><tr><td>Pre-Roll</td><td style="font-weight:700">$3,031</td></tr><tr><td>Edible (Solid)</td><td style="font-weight:700">$2,143</td></tr><tr><td>Concentrate</td><td style="font-weight:700">$1,154</td></tr><tr><td>Disposable Vaporizer</td><td style="font-weight:700">$1,114</td></tr><tr><td>Edible (Liquid)</td><td style="font-weight:700">$557</td></tr><tr><td>Topical</td><td style="font-weight:700">$269</td></tr><tr><td>Paraphernalia</td><td style="font-weight:700">$107</td></tr><tr><td>Vendor Promo</td><td style="font-weight:700">$58</td></tr><tr><td>Merch</td><td style="font-weight:700">$26</td></tr>
 </table></div>
 
 <div class="sec-title">X. Inventory Signals</div>
 <div class="grid2">
  <div class="card"><h2>Current SKU Picture</h2>
- <div class="row"><span class="label">Distinct product IDs sold (W30)</span><span class="val">543</span></div>
+ <div class="row"><span class="label">Distinct product IDs sold (W31)</span><span class="val">527</span></div>
  <div class="row"><span class="label">Catalog match rate</span><span class="val">100%</span></div>
  </div>
- <div class="card"><h2>Top Product Data (W30)</h2>
- <div class="note">Real product names now live via catalog join. See Section VII/IX for leaders.</div>
+ <div class="card"><h2>Top Product Data (W31)</h2>
+ <div class="note">Real product names live via catalog join. See Section VII/IX for leaders.</div>
  </div>
 </div>
 
 <div class="sec-title">XI. Local Market Context <span class="right">Insight 10</span></div>
-<div class="card"><div class="note" style="font-size:7.5pt;line-height:1.6;">Net sales moved -1.4% WoW to $24,287.41. Peak day was FRI 7/24. See Section VIII for fresh competitive findings this cycle.</div></div>
+<div class="card"><div class="note" style="font-size:7.5pt;line-height:1.6;">Net sales moved -0.4% WoW to $24,187.88. Peak day was SUN 8/2. See Section VIII for fresh competitive findings this cycle.</div></div>
 
 <div class="sec-title">XII. 10-Insight Checklist <span class="right">v2.3 &sect;5f</span></div>
 <div class="card"><div class="checklist">
  <div class="ci pass">Insight 1 &mdash; Net Sales / AOV / Txns</div>
  <div class="ci pass">Insight 2 &mdash; Daily Sales Trend</div>
- <div class="ci pass">Insight 3 &mdash; Top Performers</div>
+ <div class="ci pass">Insight 3 &mdash; Top Performers (full roster)</div>
  <div class="ci pass">Insight 4 &mdash; Top SKUs by Units (catalog join live)</div>
- <div class="ci pass">Insight 5 &mdash; Top SKUs by Revenue (catalog join live)</div>
+ <div class="ci pass">Insight 5 &mdash; Top SKUs by Net Sales (catalog join live)</div>
  <div class="ci gap-item">Insight 5b &mdash; SKU Margin (needs UnitCost reconciliation)</div>
  <div class="ci pass">Insight 6 &mdash; WoW &Delta;%</div>
  <div class="ci gap-item">Insight 7 &mdash; YoY &Delta;% (pending Jul 2025 monthly figure)</div>
  <div class="ci pass">Insight 8 &mdash; WoW &Delta;$</div>
- <div class="ci partial">Insight 9 &mdash; Customer Metrics (new/returning now live; full LTV pending)</div>
+ <div class="ci partial">Insight 9 &mdash; Customer Metrics (new/matched live; frequency/recency banding held pending threshold refinement)</div>
  <div class="ci pass">Insight 10 &mdash; Local Market Context</div>
 </div></div>
 
 <div class="sec-title">XIII. Data Gap Notice <span class="right">&sect;5g</span></div>
 <div class="card"><table>
- <tr><th>Item</th><th>Why it matters</th><th>Status W30</th><th>Owner / Next action</th></tr>
+ <tr><th>Item</th><th>Why it matters</th><th>Status W31</th><th>Owner / Next action</th></tr>
  <tr><td><strong>SKU Margin (Insight 5b)</strong></td><td>Product-level profitability</td><td><strong style="color:var(--warn)">GAP</strong> &mdash; requires UnitCost reconciliation against catalog.</td><td>Pipeline: add UnitCost join next cycle.</td></tr>
- <tr><td><strong>YoY exact weekly (Insight 7)</strong></td><td>Same-week prior-year comparison</td><td><strong style="color:var(--warn)">PARTIAL</strong> &mdash; Jul 2025 monthly figure needed for estimate.</td><td>Patrick: source Jul 2025 monthly management figure.</td></tr>
+ <tr><td><strong>YoY exact weekly (Insight 7)</strong></td><td>Same-week prior-year comparison</td><td><strong style="color:var(--warn)">GAP</strong> &mdash; Lake Elsinore 2025 weekly figure not pulled this cycle.</td><td>Pull from historical weekly sales spreadsheet next cycle.</td></tr>
+ <tr><td><strong>Customer frequency/recency banding</strong></td><td>New/Active/Occasional/Lapsed segmentation</td><td><strong style="color:var(--warn)">HELD</strong> &mdash; restricting to this week's purchasers trivializes LastTransaction bucketing (no Occasional/Lapsed signal). Flagged to Brett in chat, not built into dashboard.</td><td>Brett: refine banding approach outside dashboard generation.</td></tr>
 </table></div>
 
 <div class="sec-title">XIV. Methodology Notes</div>
 <div class="card"><div class="note" style="font-size:7.5pt;line-height:1.6;">
- <strong style="color:var(--white)">Period:</strong> Mon 2026-07-20 &rarr; Sun 2026-07-26. Generated 2026-07-27.<br>
+ <strong style="color:var(--white)">Period:</strong> Mon 2026-07-27 &rarr; Sun 2026-08-02. Generated 2026-08-03.<br>
  <strong style="color:var(--white)">Net sales:</strong> Dutchie transaction_line_items GAP_BACKFILL, totalBeforeTax, Retail type, isVoid=false, isReturn=false, deduped by transactionId.<br>
- <strong style="color:var(--white)">UKG hours:</strong> DetailedCalculatedTimeCounters 07/20&ndash;07/26. Regular + Daily/Weekly/FLSA Overtime + Holiday Worked Closed. PTO/VAC/PSL/DFML/Excused excluded. MOD/Lake Elsinore/Retail cost-center.<br>
- <strong style='color:var(--white)'>Security:</strong> $2,343.50/wk, split evenly across 7am–9pm operating hours (14h/day, 98h/wk).<br>
+ <strong style="color:var(--white)">UKG hours:</strong> DetailedCalculatedTimeCounters 07/27&ndash;08/02. Regular + Daily/Weekly/FLSA Overtime + Holiday Worked Closed. PTO/VAC/PSL/DFML/Excused excluded. MOD/Lake Elsinore/Retail cost-center.<br>
+ <strong style='color:var(--white)'>Security:</strong> $2,816.25/wk, split evenly across operating hours.<br>
  <strong style="color:var(--white)">Product catalog:</strong> Per-store Product Catalog export, LeafLogixID = productId join key, 100% match rate this cycle.<br>
- <strong style="color:var(--white)">Customer history:</strong> Per-store Patient Contact Report, Id = customerId join key, 100% match rate this cycle (permanent ~11% unmatched expected).<br>
- <strong style="color:var(--white)">Competitor data:</strong> Fresh review this cycle, 2026-07-27.
+ <strong style="color:var(--white)">Customer history:</strong> Per-store Patient Contact Report, Id = customerId join key, 99.6% match rate this cycle.<br>
+ <strong style="color:var(--white)">Competitor data:</strong> Fresh review this cycle, 2026-08-03.<br>
+ <strong style="color:var(--white)">Data issue resolved this cycle:</strong> Lake Elsinore's initial GAP_BACKFILL pull was truncated mid-day 8/1 (7 txns vs normal ~80-90); Patrick re-pulled a corrected full 7-day file same day (2026-08-03), used for all figures in this dashboard.
 </div></div>
 
 <div class="footer">
  <div class="brand-line">Phat Panda Group &middot; Weekly Retail Analytics</div>
  <div>Methodology v2.3 &middot; HTML Output Only</div>
- <div>Store 05 &middot; EMBR Lake Elsinore &middot; Retail Dispensary &middot; W30 2026-07-20 &rarr; 2026-07-26 &middot; Generated 2026-07-27</div>
+ <div>Store 05 &middot; EMBR Lake Elsinore &middot; Retail Dispensary &middot; W31 2026-07-27 &rarr; 2026-08-02 &middot; Generated 2026-08-03</div>
 </div>
-</div></body></html>
+</div>
+<div id="heatTooltip" class="heat-tooltip"></div>
+<script>
+(function(){
+  var tt = document.getElementById('heatTooltip');
+  var cells = document.querySelectorAll('.heat-cell');
+  cells.forEach(function(cell){
+    cell.addEventListener('mouseenter', function(){
+      var d = cell.dataset;
+      tt.innerHTML =
+        '<div class="tt-title">' + d.day + ' &middot; ' + d.part + ' (' + d.window + ')</div>' +
+        '<div class="tt-row"><span class="tt-label">Net sales</span><span class="tt-val">' + d.sales + '</span></div>' +
+        '<div class="tt-row"><span class="tt-label">Staff hrs</span><span class="tt-val">' + d.hours + '</span></div>' +
+        '<div class="tt-row"><span class="tt-label">$/Labor-Hr</span><span class="tt-val">' + d.rate + '</span></div>' +
+        '<div class="tt-row"><span class="tt-label">vs. store avg</span><span class="tt-val">' + d.norm + '</span></div>' +
+        '<div class="tt-row"><span class="tt-label">Transactions</span><span class="tt-val">' + d.txns + '</span></div>';
+      tt.style.display = 'block';
+    });
+    cell.addEventListener('mousemove', function(e){
+      var pad = 14;
+      var x = e.clientX + pad;
+      var y = e.clientY + pad;
+      var ttRect = tt.getBoundingClientRect();
+      if (x + ttRect.width > window.innerWidth) { x = e.clientX - ttRect.width - pad; }
+      if (y + ttRect.height > window.innerHeight) { y = e.clientY - ttRect.height - pad; }
+      tt.style.left = x + 'px';
+      tt.style.top = y + 'px';
+    });
+    cell.addEventListener('mouseleave', function(){
+      tt.style.display = 'none';
+    });
+  });
+})();
+</script>
+</body></html>
