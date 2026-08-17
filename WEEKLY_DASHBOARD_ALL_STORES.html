@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
-<title>Phat Panda Group &mdash; Network Rollup &mdash; W32 2026-08-09</title>
+<title>Phat Panda Group &mdash; Network Rollup &mdash; W33 2026-08-16</title>
 <style>@page { size: Letter landscape; margin: 0.4in; }
 :root {
 --bg: #000000; --surface: #111111; --card: #1A1A1A;
@@ -77,7 +77,7 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
 <div class="header">
  <div class="header-row">
  <div style="display:flex;align-items:center;gap:16px;">
- <div class="wordmark"><div class="word">EM B<span class="flame">R</span></div><div class="tagline">Quality Cannabis Reserve</div></div>
+ <div class="wordmark"><div class="word">EMB<span class="flame">R</span></div><div class="tagline">Quality Cannabis Reserve</div></div>
  <div style="border-left:1px solid var(--border-strong);padding-left:14px;">
  <h1>Network Rollup &mdash; Weekly Dashboard</h1>
  <div class="subtitle">Phat Panda Group &middot; 6 Retail Locations</div>
@@ -86,111 +86,110 @@ tr:nth-child(even) td { background:rgba(255,255,255,.02); }
  <div style="text-align:right;color:var(--muted);font-size:7pt;line-height:1.55;">
  <div style="color:var(--white);font-weight:700;font-size:8pt;">Springfield &middot; Northampton &middot; Fyre Ants &middot; La Mesa &middot; Lake Elsinore &middot; HLC Greenfield</div>
  <div>6 Retail Dispensaries &middot; MA + CA</div>
- <div style="margin-top:5px;"><span class="badge badge-ok">All Stores Live</span><span class="badge badge-prod">v2.4 &middot; Production</span> <span class="tag dn">-3.1% Network WoW</span></div>
+ <div style="margin-top:5px;"><span class="badge badge-ok">All Stores Live</span><span class="badge badge-prod">v2.4 &middot; Production</span> <span class="tag dn">-1.7% Network WoW</span></div>
  </div>
  </div>
- <div class="meta" style="margin-top:8px;">Reporting week: <strong>Mon 2026-08-03 &rarr; Sun 2026-08-09 (W32)</strong> &middot; All 6 store GAP_BACKFILL/UKG pulls current as of 2026-08-10 &middot; Generated: 2026-08-10 &middot; Phat Panda Group Analytics &middot; Methodology v2.4</div>
+ <div class="meta" style="margin-top:8px;">Reporting week: <strong>Mon 2026-08-10 &rarr; Sun 2026-08-16 (W33)</strong> &middot; All 6 stores' self-pulled Dutchie POS API (Pull-DutchieWeek.ps1) and UKG Counter/Rates pulls current as of 2026-08-17 &middot; Generated: 2026-08-17 &middot; Phat Panda Group Analytics &middot; Methodology v2.4</div>
 </div>
 
 <div class="container">
-<div class="alert-bar"><strong style="color:var(--neon)">[W32 &mdash; Network Production &mdash; 8/3&rarr;8/9]</strong> All 6 stores' Dutchie GAP_BACKFILL and UKG Counter/Rates pulls current and complete, all 7 days 100% real at every store. Both California stores (Lake Elsinore, La Mesa) required a newly-discovered timezone correction this cycle &mdash; raw Dutchie timestamps are stored in Eastern time company-wide regardless of store location, so day-bucketing now uses transactionDateLocalTime at both stores. Both CA stores' Saturday truncation gaps were closed via a same-day Dutchie Sales Report pull, boundary-validated to an exact match before use. Security costs applied at 4 of 6 stores (Springfield $2,600.00, La Mesa $2,452.50, Lake Elsinore $2,441.25, HLC Greenfield $2,016.00) &mdash; all confirmed by Brett this cycle; Northampton and Fyre Ants have no security line. Day-part staffing heatmap (flipped color convention this cycle) and fresh competitive research run at all 6 stores.</div>
+<div class="alert-bar"><strong style="color:var(--neon)">[W33 &mdash; Network Production &mdash; 8/10&rarr;8/16]</strong> All 6 stores' self-pulled Dutchie POS API data and UKG Counter/Rates pulls current and complete, all 7 days 100% real at every store. Security costs applied at 4 of 6 stores (Springfield $2,653.13, La Mesa $2,452.50, Lake Elsinore $2,441.25, HLC Greenfield $2,016.00) &mdash; as previously confirmed by Brett; Northampton and Fyre Ants have no security line. HLC Greenfield's YoY comparison remains logged as a [GAP] this cycle &mdash; the comparable 2025 Treez archive file (~21MB) exceeds available extraction tooling; flagged, not guessed (see Section VI).</div>
 
-<div class="sec-title">I. Network Operations Snapshot <span class="right">Insight 1 &middot; 6 stores &middot; 7/7 days</span></div>
+<div class="sec-title">I. Network Operations Snapshot <span class="right">6 stores &middot; 7/7 days</span></div>
 <div class="grid6">
- <div class="kpi"><div class="kpi-label">Network Net Sales</div><div class="kpi-val">$717,651</div><div class="kpi-sub">16,446 txns &middot; 6 stores</div></div>
- <div class="kpi"><div class="kpi-label">Prior Wk Net (W31)</div><div class="kpi-val">$740,288</div><div class="kpi-sub neutral">Jul 27&ndash;Aug 2 &middot; 16,891 txns</div></div>
- <div class="kpi"><div class="kpi-label">Network WoW &Delta;</div><div class="kpi-val" style="color:var(--alert)">-3.1%</div><div class="kpi-sub" style="color:var(--alert)">$-22,637 vs W31</div></div>
- <div class="kpi"><div class="kpi-label">Network AOV</div><div class="kpi-val">$43.64</div><div class="kpi-sub neutral">Net $ / Txns</div></div>
- <div class="kpi"><div class="kpi-label">Network Labor %</div><div class="kpi-val">9.1%</div><div class="kpi-sub neutral">$65,355 / $717,651 (incl. security)</div></div>
- <div class="kpi ember"><div class="kpi-label">Total Worked Hours</div><div class="kpi-val" style="font-size:13.5pt;">2,878</div><div class="kpi-sub neutral">~93 employees network-wide</div></div>
+ <div class="kpi"><div class="kpi-label">Network Net Sales</div><div class="kpi-val">$705,931</div><div class="kpi-sub">16,479 txns &middot; 6 stores</div></div>
+ <div class="kpi"><div class="kpi-label">Prior Wk Net (W32)</div><div class="kpi-val">$718,219</div><div class="kpi-sub neutral">Aug 3&ndash;9 &middot; 16,465 txns</div></div>
+ <div class="kpi"><div class="kpi-label">Network WoW &Delta;</div><div class="kpi-val" style="color:var(--alert)">-1.7%</div><div class="kpi-sub" style="color:var(--alert)">$-12,288 vs W32</div></div>
+ <div class="kpi"><div class="kpi-label">Network AOV</div><div class="kpi-val">$42.84</div><div class="kpi-sub neutral">Net $ / Txns</div></div>
+ <div class="kpi"><div class="kpi-label">Network Labor %</div><div class="kpi-val">8.9%</div><div class="kpi-sub neutral">$62,785 / $705,931 (incl. security)</div></div>
+ <div class="kpi ember"><div class="kpi-label">Total Worked Hours</div><div class="kpi-val" style="font-size:13.5pt;">2,756</div><div class="kpi-sub neutral">~92 employees network-wide</div></div>
 </div>
 
-<div class="sec-title">II. Per-Store Performance <span class="right">Insight 3 &middot; ranked by Net Sales</span></div>
+<div class="sec-title">II. Per-Store Performance <span class="right">ranked by Net Sales</span></div>
 <div class="card">
 <div class="store-bar-wrap">
-<div class="store-bar-row"><span class="store-bar-label">Springfield</span><div class="store-bar-track"><div class="store-bar-fill" style="width:100.0%"></div></div><span class="store-bar-val">$398,658 &middot; 55.6%</span></div><div class="store-bar-row"><span class="store-bar-label">Fyre Ants Easthampton</span><div class="store-bar-track"><div class="store-bar-fill" style="width:29.2%"></div></div><span class="store-bar-val">$116,260 &middot; 16.2%</span></div><div class="store-bar-row"><span class="store-bar-label">HLC Greenfield</span><div class="store-bar-track"><div class="store-bar-fill" style="width:19.5%"></div></div><span class="store-bar-val">$77,856 &middot; 10.8%</span></div><div class="store-bar-row"><span class="store-bar-label">Northampton</span><div class="store-bar-track"><div class="store-bar-fill" style="width:14.8%"></div></div><span class="store-bar-val">$58,841 &middot; 8.2%</span></div><div class="store-bar-row"><span class="store-bar-label">La Mesa</span><div class="store-bar-track"><div class="store-bar-fill" style="width:9.8%"></div></div><span class="store-bar-val">$39,047 &middot; 5.4%</span></div><div class="store-bar-row"><span class="store-bar-label">Lake Elsinore</span><div class="store-bar-track"><div class="store-bar-fill" style="width:6.8%"></div></div><span class="store-bar-val">$26,989 &middot; 3.8%</span></div>
+<div class="store-bar-row"><span class="store-bar-label">Springfield</span><div class="store-bar-track"><div class="store-bar-fill" style="width:100.0%"></div></div><span class="store-bar-val">$394,700 &middot; 55.9%</span></div><div class="store-bar-row"><span class="store-bar-label">Fyre Ants Easthampton</span><div class="store-bar-track"><div class="store-bar-fill" style="width:29.0%"></div></div><span class="store-bar-val">$114,559 &middot; 16.2%</span></div><div class="store-bar-row"><span class="store-bar-label">HLC Greenfield</span><div class="store-bar-track"><div class="store-bar-fill" style="width:19.4%"></div></div><span class="store-bar-val">$76,761 &middot; 10.9%</span></div><div class="store-bar-row"><span class="store-bar-label">Northampton</span><div class="store-bar-track"><div class="store-bar-fill" style="width:14.1%"></div></div><span class="store-bar-val">$55,835 &middot; 7.9%</span></div><div class="store-bar-row"><span class="store-bar-label">La Mesa</span><div class="store-bar-track"><div class="store-bar-fill" style="width:10.0%"></div></div><span class="store-bar-val">$39,324 &middot; 5.6%</span></div><div class="store-bar-row"><span class="store-bar-label">Lake Elsinore</span><div class="store-bar-track"><div class="store-bar-fill" style="width:6.3%"></div></div><span class="store-bar-val">$24,751 &middot; 3.5%</span></div>
 </div>
 <table><tr><th>Store</th><th>Net Sales</th><th>Txns</th><th>AOV</th><th>WoW &Delta;$</th><th>WoW &Delta;%</th><th>Labor %</th></tr>
-<tr><td><strong>EMBR Springfield</strong></td><td style="font-weight:700">$398,658.22</td><td>9,059</td><td>$44.01</td><td style="color:var(--alert)">$-22,477.37</td><td style="color:var(--alert);font-weight:700">-5.3%</td><td style="color:var(--leaf)">5.9%</td></tr><tr><td><strong>Fyre Ants Easthampton</strong></td><td style="font-weight:700">$116,260.04</td><td>2,128</td><td>$54.63</td><td style="color:var(--alert)">$-493.17</td><td style="color:var(--alert);font-weight:700">-0.4%</td><td style="color:var(--warn)">12.5%</td></tr><tr><td><strong>HLC Greenfield</strong></td><td style="font-weight:700">$77,855.74</td><td>2,491</td><td>$31.25</td><td style="color:var(--alert)">$-1,709.52</td><td style="color:var(--alert);font-weight:700">-2.1%</td><td style="color:var(--warn)">12.8%</td></tr><tr><td><strong>EMBR Northampton</strong></td><td style="font-weight:700">$58,841.34</td><td>1,380</td><td>$42.64</td><td style="color:var(--alert)">$-1,810.87</td><td style="color:var(--alert);font-weight:700">-3.0%</td><td style="color:var(--leaf)">7.7%</td></tr><tr><td><strong>EMBR La Mesa</strong></td><td style="font-weight:700">$39,046.52</td><td>887</td><td>$44.02</td><td style="color:var(--leaf)">+$1,052.51</td><td style="color:var(--leaf);font-weight:700">+2.8%</td><td style="color:var(--alert)">18.7%</td></tr><tr><td><strong>EMBR Lake Elsinore</strong></td><td style="font-weight:700">$26,989.25</td><td>501</td><td>$53.87</td><td style="color:var(--leaf)">+$2,801.37</td><td style="color:var(--leaf);font-weight:700">+11.6%</td><td style="color:var(--alert)">20.8%</td></tr>
-<tr style="border-top:2px solid var(--neon)"><td><strong>NETWORK TOTAL</strong></td><td style="font-weight:800;color:var(--neon)">$717,651.11</td><td style="font-weight:800">16,446</td><td style="font-weight:800">$43.64</td><td style="color:var(--alert);font-weight:800">$-22,637.05</td><td style="color:var(--alert);font-weight:800">-3.1%</td><td style="font-weight:800">9.1%</td></tr>
+<tr><td><strong>EMBR Springfield</strong></td><td style="font-weight:700">$394,700.19</td><td>9,117</td><td>$43.29</td><td style="color:var(--alert)">-$3,958.03</td><td style="color:var(--alert);font-weight:700">-1.0%</td><td style="color:var(--leaf)">6.3%</td></tr><tr><td><strong>Fyre Ants Easthampton</strong></td><td style="font-weight:700">$114,558.61</td><td>2,094</td><td>$54.71</td><td style="color:var(--alert)">-$1,701.43</td><td style="color:var(--alert);font-weight:700">-1.5%</td><td style="color:var(--warn)">9.4%</td></tr><tr><td><strong>HLC Greenfield</strong></td><td style="font-weight:700">$76,761.18</td><td>2,518</td><td>$30.48</td><td style="color:var(--alert)">-$1,662.13</td><td style="color:var(--alert);font-weight:700">-2.1%</td><td style="color:var(--warn)">12.3%</td></tr><tr><td><strong>EMBR Northampton</strong></td><td style="font-weight:700">$55,835.39</td><td>1,343</td><td>$41.58</td><td style="color:var(--alert)">-$3,005.95</td><td style="color:var(--alert);font-weight:700">-5.1%</td><td style="color:var(--warn)">8.0%</td></tr><tr><td><strong>EMBR La Mesa</strong></td><td style="font-weight:700">$39,324.24</td><td>880</td><td>$44.69</td><td style="color:var(--leaf)">+$277.72</td><td style="color:var(--leaf);font-weight:700">+0.7%</td><td style="color:var(--alert)">18.4%</td></tr><tr><td><strong>EMBR Lake Elsinore</strong></td><td style="font-weight:700">$24,751.31</td><td>527</td><td>$46.97</td><td style="color:var(--alert)">-$2,237.94</td><td style="color:var(--alert);font-weight:700">-8.3%</td><td style="color:var(--alert)">24.4%</td></tr>
+<tr style="border-top:2px solid var(--neon)"><td><strong>NETWORK TOTAL</strong></td><td style="font-weight:800;color:var(--neon)">$705,930.92</td><td style="font-weight:800">16,479</td><td style="font-weight:800">$42.84</td><td style="color:var(--alert);font-weight:800">-$12,287.76</td><td style="color:var(--alert);font-weight:800">-1.7%</td><td style="font-weight:800">8.9%</td></tr>
 </table>
 <div class="note">See Section VI for synthesized notes on this cycle's standout movers.</div>
 </div>
 
-<div class="sec-title">III. Labor Efficiency <span class="right">Insight &middot; Sales:Labor by store</span></div>
+<div class="sec-title">III. Labor Efficiency <span class="right">Sales:Labor by store</span></div>
 <div class="card">
 <table><tr><th>Store</th><th>Worked Hrs</th><th>Payroll Cost</th><th>Security Cost</th><th>Total Labor</th><th>Blended $/hr</th><th>Sales:Labor $</th><th>Labor % of Net</th></tr>
-<tr><td><strong>EMBR Springfield</strong></td><td>1,097.8</td><td>$20,777.61</td><td>$2,600.00</td><td>$23,377.61</td><td>$18.93</td><td>$17.05:$1</td><td style="color:var(--leaf)">5.9%</td></tr><tr><td><strong>Fyre Ants Easthampton</strong></td><td>719.1</td><td>$14,579.60</td><td>&mdash;</td><td>$14,579.60</td><td>$20.27</td><td>$7.97:$1</td><td style="color:var(--warn)">12.5%</td></tr><tr><td><strong>HLC Greenfield</strong></td><td>408.8</td><td>$7,938.30</td><td>$2,016.00</td><td>$9,954.30</td><td>$19.42</td><td>$7.82:$1</td><td style="color:var(--warn)">12.8%</td></tr><tr><td><strong>EMBR Northampton</strong></td><td>231.1</td><td>$4,528.83</td><td>&mdash;</td><td>$4,528.83</td><td>$19.60</td><td>$12.99:$1</td><td style="color:var(--leaf)">7.7%</td></tr><tr><td><strong>EMBR La Mesa</strong></td><td>242.8</td><td>$4,848.43</td><td>$2,452.50</td><td>$7,300.93</td><td>$19.97</td><td>$5.35:$1</td><td style="color:var(--alert)">18.7%</td></tr><tr><td><strong>EMBR Lake Elsinore</strong></td><td>178.7</td><td>$3,172.22</td><td>$2,441.25</td><td>$5,613.47</td><td>$17.75</td><td>$4.81:$1</td><td style="color:var(--alert)">20.8%</td></tr>
-<tr style="border-top:2px solid var(--neon)"><td><strong>NETWORK</strong></td><td style="font-weight:800">2,878.3</td><td style="font-weight:800">$55,844.99</td><td style="font-weight:800">$9,509.75</td><td style="font-weight:800;color:var(--neon)">$65,354.74</td><td style="font-weight:800">$19.40</td><td style="font-weight:800">$10.98:$1</td><td style="font-weight:800">9.1%</td></tr>
+<tr><td><strong>EMBR Springfield</strong></td><td>1,165.3</td><td>$22,126.28</td><td>$2,653.13</td><td>$24,779.41</td><td>$18.99</td><td>$15.93:$1</td><td style="color:var(--leaf)">6.3%</td></tr><tr><td><strong>Fyre Ants Easthampton</strong></td><td>573.5</td><td>$10,783.31</td><td>&mdash;</td><td>$10,783.31</td><td>$18.80</td><td>$10.62:$1</td><td style="color:var(--warn)">9.4%</td></tr><tr><td><strong>HLC Greenfield</strong></td><td>382.1</td><td>$7,452.33</td><td>$2,016.00</td><td>$9,468.33</td><td>$19.50</td><td>$8.11:$1</td><td style="color:var(--warn)">12.3%</td></tr><tr><td><strong>EMBR Northampton</strong></td><td>226.3</td><td>$4,480.66</td><td>&mdash;</td><td>$4,480.66</td><td>$19.80</td><td>$12.46:$1</td><td style="color:var(--warn)">8.0%</td></tr><tr><td><strong>EMBR La Mesa</strong></td><td>238.2</td><td>$4,779.57</td><td>$2,452.50</td><td>$7,232.07</td><td>$20.07</td><td>$5.44:$1</td><td style="color:var(--alert)">18.4%</td></tr><tr><td><strong>EMBR Lake Elsinore</strong></td><td>170.4</td><td>$3,599.87</td><td>$2,441.25</td><td>$6,041.12</td><td>$21.12</td><td>$4.10:$1</td><td style="color:var(--alert)">24.4%</td></tr>
+<tr style="border-top:2px solid var(--neon)"><td><strong>NETWORK</strong></td><td style="font-weight:800">2,755.9</td><td style="font-weight:800">$53,222.02</td><td style="font-weight:800">$9,562.88</td><td style="font-weight:800;color:var(--neon)">$62,784.90</td><td style="font-weight:800">$19.31</td><td style="font-weight:800">$11.24:$1</td><td style="font-weight:800">8.9%</td></tr>
 </table>
 </div>
 
-<div class="sec-title">IV. Network Daily Trend <span class="right">Insight 2 &middot; Neon = sales, Ember = labor overlay</span></div>
+<div class="sec-title">IV. Network Daily Trend <span class="right">Neon = sales, Ember = labor overlay</span></div>
 <div class="card">
  <div class="day-bar-wrap"><div class="day-bar"><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$87k</span><span class="day-aov-lbl">AOV $42.21</span></div>
+ <div class="day-top"><span class="day-val-lbl">$73k</span><span class="day-aov-lbl">AOV $36.89</span></div>
+ <div class="bar-outer" style="height:74px"><div class="bar-labor" style="height:7px"></div><div class="bar-sales" style="height:67px"></div></div>
+ <div class="day-bottom"><span class="day-dow">MON</span><span class="day-date-lbl">8/10</span><span class="day-labor-lbl">$6,473 / 8.8%</span></div>
+</div><div class="day-col">
+ <div class="day-top"><span class="day-val-lbl">$87k</span><span class="day-aov-lbl">AOV $40.57</span></div>
  <div class="bar-outer" style="height:88px"><div class="bar-labor" style="height:7px"></div><div class="bar-sales" style="height:81px"></div></div>
- <div class="day-bottom"><span class="day-dow">MON</span><span class="day-date-lbl">8/3</span><span class="day-labor-lbl">$7,420 / 8.5%</span></div>
+ <div class="day-bottom"><span class="day-dow">TUE</span><span class="day-date-lbl">8/11</span><span class="day-labor-lbl">$6,970 / 8.0%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$89k</span><span class="day-aov-lbl">AOV $41.73</span></div>
- <div class="bar-outer" style="height:90px"><div class="bar-labor" style="height:9px"></div><div class="bar-sales" style="height:81px"></div></div>
- <div class="day-bottom"><span class="day-dow">TUE</span><span class="day-date-lbl">8/4</span><span class="day-labor-lbl">$9,022 / 10.2%</span></div>
+ <div class="day-top"><span class="day-val-lbl">$101k</span><span class="day-aov-lbl">AOV $42.93</span></div>
+ <div class="bar-outer" style="height:102px"><div class="bar-labor" style="height:8px"></div><div class="bar-sales" style="height:94px"></div></div>
+ <div class="day-bottom"><span class="day-dow">WED</span><span class="day-date-lbl">8/12</span><span class="day-labor-lbl">$8,294 / 8.2%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$97k</span><span class="day-aov-lbl">AOV $42.74</span></div>
- <div class="bar-outer" style="height:98px"><div class="bar-labor" style="height:10px"></div><div class="bar-sales" style="height:88px"></div></div>
- <div class="day-bottom"><span class="day-dow">WED</span><span class="day-date-lbl">8/5</span><span class="day-labor-lbl">$9,472 / 9.8%</span></div>
+ <div class="day-top"><span class="day-val-lbl">$105k</span><span class="day-aov-lbl">AOV $42.80</span></div>
+ <div class="bar-outer" style="height:106px"><div class="bar-labor" style="height:8px"></div><div class="bar-sales" style="height:98px"></div></div>
+ <div class="day-bottom"><span class="day-dow">THU</span><span class="day-date-lbl">8/13</span><span class="day-labor-lbl">$8,231 / 7.8%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$100k</span><span class="day-aov-lbl">AOV $42.87</span></div>
- <div class="bar-outer" style="height:101px"><div class="bar-labor" style="height:10px"></div><div class="bar-sales" style="height:91px"></div></div>
- <div class="day-bottom"><span class="day-dow">THU</span><span class="day-date-lbl">8/6</span><span class="day-labor-lbl">$9,933 / 10.0%</span></div>
+ <div class="day-top"><span class="day-val-lbl">$129k</span><span class="day-aov-lbl">AOV $47.06</span></div>
+ <div class="bar-outer" style="height:130px"><div class="bar-labor" style="height:9px"></div><div class="bar-sales" style="height:121px"></div></div>
+ <div class="day-bottom"><span class="day-dow">FRI</span><span class="day-date-lbl">8/14</span><span class="day-labor-lbl">$8,872 / 6.9%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$129k</span><span class="day-aov-lbl">AOV $46.57</span></div>
- <div class="bar-outer" style="height:130px"><div class="bar-labor" style="height:11px"></div><div class="bar-sales" style="height:119px"></div></div>
- <div class="day-bottom"><span class="day-dow">FRI</span><span class="day-date-lbl">8/7</span><span class="day-labor-lbl">$10,725 / 8.3%</span></div>
+ <div class="day-top"><span class="day-val-lbl">$119k</span><span class="day-aov-lbl">AOV $45.85</span></div>
+ <div class="bar-outer" style="height:120px"><div class="bar-labor" style="height:8px"></div><div class="bar-sales" style="height:112px"></div></div>
+ <div class="day-bottom"><span class="day-dow">SAT</span><span class="day-date-lbl">8/15</span><span class="day-labor-lbl">$8,091 / 6.8%</span></div>
 </div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$117k</span><span class="day-aov-lbl">AOV $45.49</span></div>
- <div class="bar-outer" style="height:118px"><div class="bar-labor" style="height:8px"></div><div class="bar-sales" style="height:110px"></div></div>
- <div class="day-bottom"><span class="day-dow">SAT</span><span class="day-date-lbl">8/8</span><span class="day-labor-lbl">$7,649 / 6.6%</span></div>
-</div><div class="day-col">
- <div class="day-top"><span class="day-val-lbl">$100k</span><span class="day-aov-lbl">AOV $42.77</span></div>
- <div class="bar-outer" style="height:101px"><div class="bar-labor" style="height:7px"></div><div class="bar-sales" style="height:94px"></div></div>
- <div class="day-bottom"><span class="day-dow">SUN</span><span class="day-date-lbl">8/9</span><span class="day-labor-lbl">$6,894 / 6.9%</span></div>
+ <div class="day-top"><span class="day-val-lbl">$92k</span><span class="day-aov-lbl">AOV $41.57</span></div>
+ <div class="bar-outer" style="height:93px"><div class="bar-labor" style="height:6px"></div><div class="bar-sales" style="height:87px"></div></div>
+ <div class="day-bottom"><span class="day-dow">SUN</span><span class="day-date-lbl">8/16</span><span class="day-labor-lbl">$6,290 / 6.8%</span></div>
 </div></div></div>
  <div class="bar-legend"><span><span class="swatch" style="background:var(--neon)"></span>Network daily sales</span><span><span class="swatch" style="background:var(--ember)"></span>Network labor cost overlay</span></div>
- <div class="note">Network sales peaked FRI at $128,629. Both Saturday and Sunday held up well network-wide despite the two CA stores' Saturday gap-fill methodology change this cycle.</div>
+ <div class="note">Network sales peaked FRI 8/14 at $128,577. Volume built steadily Mon&ndash;Fri before easing into the weekend, consistent with the network's typical weekly shape.</div>
 </div>
 
-<div class="sec-title">V. Revenue Mix <span class="right">Insight &middot; store contribution to network</span></div>
+<div class="sec-title">V. Revenue Mix <span class="right">store contribution to network</span></div>
 <div class="card">
 <table><tr><th>Store</th><th>State</th><th>Net Sales</th><th>% of Network</th><th>Txn Share</th></tr>
-<tr><td>EMBR Springfield</td><td>MA</td><td>$398,658.22</td><td style="font-weight:700;color:var(--neon)">55.6%</td><td>55.1%</td></tr><tr><td>Fyre Ants Easthampton</td><td>MA</td><td>$116,260.04</td><td style="font-weight:700;color:var(--neon)">16.2%</td><td>12.9%</td></tr><tr><td>HLC Greenfield</td><td>CA</td><td>$77,855.74</td><td style="font-weight:700;color:var(--neon)">10.8%</td><td>15.1%</td></tr><tr><td>EMBR Northampton</td><td>MA</td><td>$58,841.34</td><td style="font-weight:700;color:var(--neon)">8.2%</td><td>8.4%</td></tr><tr><td>EMBR La Mesa</td><td>CA</td><td>$39,046.52</td><td style="font-weight:700;color:var(--neon)">5.4%</td><td>5.4%</td></tr><tr><td>EMBR Lake Elsinore</td><td>CA</td><td>$26,989.25</td><td style="font-weight:700;color:var(--neon)">3.8%</td><td>3.0%</td></tr>
+<tr><td>EMBR Springfield</td><td>MA</td><td>$394,700.19</td><td style="font-weight:700;color:var(--neon)">55.9%</td><td>55.3%</td></tr><tr><td>Fyre Ants Easthampton</td><td>MA</td><td>$114,558.61</td><td style="font-weight:700;color:var(--neon)">16.2%</td><td>12.7%</td></tr><tr><td>HLC Greenfield</td><td>CA</td><td>$76,761.18</td><td style="font-weight:700;color:var(--neon)">10.9%</td><td>15.3%</td></tr><tr><td>EMBR Northampton</td><td>MA</td><td>$55,835.39</td><td style="font-weight:700;color:var(--neon)">7.9%</td><td>8.1%</td></tr><tr><td>EMBR La Mesa</td><td>CA</td><td>$39,324.24</td><td style="font-weight:700;color:var(--neon)">5.6%</td><td>5.3%</td></tr><tr><td>EMBR Lake Elsinore</td><td>CA</td><td>$24,751.31</td><td style="font-weight:700;color:var(--neon)">3.5%</td><td>3.2%</td></tr>
 </table>
-<div class="note">MA stores (Springfield, Northampton, Fyre Ants) contribute 79.9% of network net sales this cycle; CA stores (La Mesa, Lake Elsinore, HLC Greenfield) contribute 20.1%. HLC Greenfield's low AOV ($31.25) vs. its relatively high transaction share reflects its high-volume, low-basket customer base, consistent with prior cycles.</div>
+<div class="note">MA stores (Springfield, Northampton, Fyre Ants) contribute 80.0% of network net sales this cycle; CA stores (La Mesa, Lake Elsinore, HLC Greenfield) contribute 20.0%. HLC Greenfield's low AOV ($30.48) vs. its relatively high transaction share reflects its high-volume, low-basket customer base, consistent with prior cycles.</div>
 </div>
 
 <div class="sec-title">VI. Key Observations <span class="right">Synthesized across all 6 stores</span></div>
 <div class="card">
-<div class="alert-bar warn"><span class="tag dn">DOWN</span>&nbsp;<strong>Network net sales moved -3.1% WoW to $717,651</strong>, on 16,446 transactions across 6 stores at a blended AOV of $43.64 &mdash; a reversal from W31's +4.5% network growth.</div>
-<div class="alert-bar warn"><span class="tag dn">DOWN</span>&nbsp;<strong>Springfield (-5.3%, -$22,477) drove the network decline almost single-handedly</strong> &mdash; at 55.6% of network revenue, its pullback outweighed growth at every other store combined. Northampton (-3.0%) and HLC Greenfield (-2.1%) also softened; Fyre Ants was roughly flat (-0.4%).</div>
-<div class="alert-bar"><span class="tag up">UP</span>&nbsp;<strong>Lake Elsinore (+11.6%) and La Mesa (+2.8%) were the network's only growth stories this cycle</strong> &mdash; both are the two stores that required this cycle's Eastern/Pacific timezone correction and Sales Report gap-fill methodology change, suggesting the prior weeks' Saturday truncation may have been modestly understating both stores' true totals.</div>
-<div class="alert-bar warn"><span class="tag est">FLAG</span>&nbsp;<strong>Timezone discovery this cycle (Lake Elsinore, La Mesa)</strong> &mdash; both California stores' raw Dutchie transactionDate field is stored in Eastern time company-wide rather than each store's real local time; day-bucketing and Saturday-gap validation now use transactionDateLocalTime at both stores to prevent late-evening transactions from being misassigned to the wrong calendar day. Massachusetts stores are unaffected (Eastern is their real local time).</div>
-<div class="alert-bar"><span class="tag up">NOTE</span>&nbsp;<strong>All 4 applicable security cost lines confirmed by Brett this cycle</strong> (Springfield $2,600.00, La Mesa $2,452.50 [down from $2,807.50], Lake Elsinore $2,441.25 [down from $2,816.25], HLC Greenfield $2,016.00 [down from $2,066.00]).</div>
-<div class="alert-bar info"><span class="tag info">PIPELINE</span>&nbsp;<strong>Day-part staffing heatmap color convention flipped this cycle</strong> (neon = understaffed, ember = slack) across all 6 stores &mdash; a labeling/color change only, ratio calculation and per-store normalization unchanged.</div>
-<div class="alert-bar info"><span class="tag info">INFO</span>&nbsp;<strong>Network unique customers: 12,932</strong> across all 6 stores this cycle (store-level figures are not directly additive across the network due to customers who may shop more than one location; shown here as a simple sum for reference).</div>
+<div class="alert-bar warn"><span class="tag dn">DOWN</span>&nbsp;<strong>Network net sales moved -1.7% WoW to $705,931</strong>, on 16,479 transactions across 6 stores at a blended AOV of $42.84 &mdash; a milder pullback than W32's -3.1% network decline.</div>
+<div class="alert-bar warn"><span class="tag dn">DOWN</span>&nbsp;<strong>Lake Elsinore (-8.3%, -$2,237.94) posted the network's steepest WoW decline</strong>, with Northampton close behind (-5.1%, -$3,005.95). Springfield's more modest -1.0% dip was still the largest single dollar swing network-wide (-$3,958.03) given its 55.9% share of network revenue. Fyre Ants Easthampton (-1.5%) and HLC Greenfield (-2.1%) also softened.</div>
+<div class="alert-bar"><span class="tag up">UP</span>&nbsp;<strong>La Mesa (+0.7%, +$277.72) was the network's only grower this cycle</strong> &mdash; every other store posted a WoW decline.</div>
+<div class="alert-bar warn"><span class="tag est">FLAG</span>&nbsp;<strong>HLC Greenfield YoY comparison remains a logged [GAP]</strong> &mdash; the comparable 2025 week must come from the Treez historical archive (pre-cutover), and the located source file (~21MB) exceeds both the direct-download cap and the text-extraction tool's effective limit. Flagged to Brett rather than estimated; carried forward from HLC's individual dashboard.</div>
+<div class="alert-bar"><span class="tag up">NOTE</span>&nbsp;<strong>3 of 4 applicable security cost lines held flat W32&rarr;W33</strong> (La Mesa $2,452.50, Lake Elsinore $2,441.25, HLC Greenfield $2,016.00); Springfield's rose slightly to $2,653.13 (from $2,600.00). Northampton and Fyre Ants continue to carry no security line.</div>
+<div class="alert-bar info"><span class="tag info">INFO</span>&nbsp;<strong>Network unique customers: 12,130</strong> across all 6 stores this cycle (store-level figures are not directly additive across the network due to customers who may shop more than one location; shown here as a simple sum for reference).</div>
 </div>
 
 <div class="sec-title">VII. Methodology Notes</div>
 <div class="card"><div class="note" style="font-size:7.5pt;line-height:1.6;">
- <strong style="color:var(--white)">Period:</strong> Mon 2026-08-03 &rarr; Sun 2026-08-09 (W32). Generated 2026-08-10.<br>
- <strong style="color:var(--white)">Net sales:</strong> Sum of each store's Dutchie transaction_line_items GAP_BACKFILL totalBeforeTax, Retail type, isVoid=false, isReturn=false, deduped by transactionId, per that store's individual dashboard. Lake Elsinore and La Mesa additionally use a Dutchie Sales Report to close each store's Saturday 8/8 truncation gap this cycle (see each store's dashboard for boundary validation detail).<br>
+ <strong style="color:var(--white)">Period:</strong> Mon 2026-08-10 &rarr; Sun 2026-08-16 (W33). Generated 2026-08-17.<br>
+ <strong style="color:var(--white)">Net sales:</strong> Sum of each store's self-pulled Dutchie POS API transaction data (Pull-DutchieWeek.ps1), Retail type, isVoid=false, isReturn=false, deduped by transactionId, per that store's individual dashboard.<br>
  <strong style="color:var(--white)">Labor:</strong> Sum of each store's UKG DetailedCalculatedTimeCounters (Regular + OT) joined to DetailedRates for real $ payroll cost, plus security costs where applicable, per that store's individual dashboard.<br>
- <strong style="color:var(--white)">WoW baseline:</strong> Sum of each store's own reported W31 (Jul 27&ndash;Aug 2) actuals.<br>
+ <strong style="color:var(--white)">WoW baseline:</strong> Sum of each store's own reported W32 (Aug 3&ndash;9) actuals.<br>
  <strong style="color:var(--white)">Store-level detail:</strong> See each store's individual weekly dashboard for daily trend, day-part staffing heatmap, top performers, SKU tables, and competitive landscape.
 </div></div>
 
 <div class="footer">
  <div class="brand-line">Phat Panda Group &middot; Weekly Retail Analytics</div>
  <div>Methodology v2.4 &middot; HTML Output Only &middot; Network Rollup</div>
- <div>6 Stores &middot; W32 2026-08-03 &rarr; 2026-08-09 &middot; Generated 2026-08-10</div>
+ <div>6 Stores &middot; W33 2026-08-10 &rarr; 2026-08-16 &middot; Generated 2026-08-17</div>
 </div>
 </div></body></html>
